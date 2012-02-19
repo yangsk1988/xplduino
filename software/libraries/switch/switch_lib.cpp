@@ -20,7 +20,7 @@
 
 /********************************************************************************************
  * switch_lib
- * bibliotheque gerant les boutons poussoirs ( bibliotheque switch_lib)
+ * bibliotheque gerant les boutons poussoirs (bibliotheque switch_lib)
  * version 0.0
  *
  * init() => initialise les parametres de l'objet boutton
@@ -44,8 +44,6 @@ Switch::Switch(){
 
 int Switch::init(char *_name, byte _parameter, byte _DI_address, byte _maintained_delay)
 {
-
-
     //lecture du type d'entrée (niveau haut ou niveau bas) pour ajuster le flag de changement d'état.
     //evitant ainsi de detecter un faux changement d'état au premier update du switch
     if(R_HIGH){
@@ -144,7 +142,8 @@ int Switch::update(byte _new_level)
 
     }
     //~ else if(not isOff() && not isPulse()){	// si switch released /!\ remplacé car consomme plus de memoire (16 octets!!)
-    else if(not R_RELEASED && not R_PULSE){	// si switch released
+    //~ else if(not R_RELEASED && not R_PULSE){	// si switch released
+    else{	// si switch released
         W_RELEASED(true);	// info "OFF" jusqu'à nouvel appui sur le switch
         W_MAINTAINED(false);    // RAZ de la memoire "appuie maintenu"
         mem_millis=0;           // RAZ du compteur de duree d'appui

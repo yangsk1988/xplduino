@@ -43,6 +43,7 @@ void setup() {
 }
 
 void loop() {
+    
     Serial.println("######################");
     Serial.println("simu impulsion (moins de 1000 ms)");
     SWITCH[0].update(1);
@@ -53,7 +54,7 @@ void loop() {
     delay(100);
     status("00010");
     SWITCH[0].update(0);
-    status("10000");
+    status("10010");
     SWITCH[0].update(0);
     status("00010");
 
@@ -90,7 +91,10 @@ void loop() {
     delay(100);
     SWITCH[0].update(0);
     status("00010");
-    while(1){};
+    
+    //~ while(1){};
+    
+    delay(5000);
 
 }
 
@@ -109,7 +113,7 @@ int status(char * _wait){
     
     Serial.print("wait: ");
     Serial.print(_wait);
-    Serial.print(", real: ");
+    Serial.print("/");
     Serial.print(SWITCH[0].isPulse(), DEC);
     Serial.print(SWITCH[0].isOn(), DEC);
     Serial.print(SWITCH[0].isOnOns(), DEC);
