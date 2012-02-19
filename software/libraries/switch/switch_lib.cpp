@@ -17,7 +17,6 @@
 //      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 //      MA 02110-1301, USA.
 
-
 /********************************************************************************************
  * switch_lib
  * bibliotheque gerant les boutons poussoirs (bibliotheque switch_lib)
