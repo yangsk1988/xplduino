@@ -17,6 +17,8 @@ void setup() {
     //start serial
     Serial.begin(115200);
 
+    delay(1000);
+
     SWITCH[0].init("bp_salon", 1, 1, 10); // bp_salon, information de type "on" si l'entrée est à 1, d'adresse "1", "on" si entrée à 1 plus de 10*100ms, sinon pulse.
     SWITCH[1].init("bp_cuisine", 1, 2, 10); 
     SWITCH[2].init("bp_2", 1, 2, 10); 
@@ -41,7 +43,7 @@ void setup() {
 }
 
 void loop() {
-    
+    Serial.println("######################");
     Serial.println("simu impulsion (moins de 1000 ms)");
     SWITCH[0].update(1);
     delay(100);
@@ -49,10 +51,11 @@ void loop() {
     delay(100);
     SWITCH[0].update(1);
     delay(100);
-    status();
+    status("00010");
     SWITCH[0].update(0);
-    
-    status();
+    status("10000");
+    SWITCH[0].update(0);
+    status("00010");
 
     Serial.println("simu appui maintenu (plus de 1000 ms)");  
     delay(100);
@@ -77,15 +80,16 @@ void loop() {
     SWITCH[0].update(1);
     delay(100);
     SWITCH[0].update(1);
+    status("01100");
     delay(100);
     SWITCH[0].update(1);
-    status();
+    status("01000");
     delay(100);
     SWITCH[0].update(0);
-    status();
+    status("00011");
     delay(100);
     SWITCH[0].update(0);
-    status();
+    status("00010");
     while(1){};
 
 }
@@ -101,7 +105,11 @@ int switch_status(byte _type, char * _name, char * _current){
 
 }
 
-int status(){
+int status(char * _wait){
+    
+    Serial.print("wait: ");
+    Serial.print(_wait);
+    Serial.print(", real: ");
     Serial.print(SWITCH[0].isPulse(), DEC);
     Serial.print(SWITCH[0].isOn(), DEC);
     Serial.print(SWITCH[0].isOnOns(), DEC);

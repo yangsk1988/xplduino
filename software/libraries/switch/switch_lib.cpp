@@ -60,7 +60,8 @@ int Switch::init(char *_name, byte _parameter, byte _DI_address, byte _maintaine
     W_PULSE(false);
     W_MAINTAINED(false);
     W_MAINTAINED_ONS(false);
-    W_RELEASED(false);
+    W_RELEASED(true);
+    W_RELEASED_ONS(false);
     W_HIGH(_parameter);
     W_TEMP(false);
 
@@ -101,6 +102,7 @@ int Switch::update(byte _new_level)
     if (R_TEMP != R_LEVEL){  // Traitement du changement d'etat de l'entree
 
         if (R_TEMP!=R_HIGH && !R_MAINTAINED){	// cas haut => bas, relachement du switch avant d'atteindre l'etat "on"
+            W_RELEASED(false); // info "off" est mis à 0
             W_PULSE(true);  // info "appuie pulse" pour un cycle
             #ifdef switch_lib_debug
             Serial.print("B#pulse-");
@@ -141,7 +143,9 @@ int Switch::update(byte _new_level)
         }
 
     }
-    else{	// si switch released
+    //~ else if(not isOff() && not isPulse()){	// si switch released /!\ remplacé car consomme plus de memoire (16 octets!!)
+    else if(not R_RELEASED && not R_PULSE){	// si switch released
+        W_RELEASED(true);	// info "OFF" jusqu'à nouvel appui sur le switch
         W_MAINTAINED(false);    // RAZ de la memoire "appuie maintenu"
         mem_millis=0;           // RAZ du compteur de duree d'appui
     }
