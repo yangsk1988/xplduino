@@ -33,7 +33,7 @@
 #include <stdio.h>
 
 #define TRIG 0
-//~ #define switch_lib_debug // comment this line to inhibit debug message and save memory
+#define switch_lib_debug // comment this line to inhibit debug message and save memory
 
 extern int switch_status(byte _type, char * _name, char * _current);
 
