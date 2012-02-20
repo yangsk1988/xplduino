@@ -24,8 +24,8 @@ void setup() {
 
     delay(1000);
 
-    SWITCH[0].init("bp_salon", High, 1, 10); // bp_salon, information de type "on" si l'entrée est à 1, d'adresse "1", "on" si entrée à 1 plus de 10*100ms, sinon pulse.
-    SWITCH[1].init("bp_cuisine", 1, 2, 10); 
+    SWITCH[0].init("bp_salon", 1, 1, 10); // bp_salon, information de type "on" si l'entrée est à 1, d'adresse "1", "on" si entrée à 1 plus de 10*100ms, sinon pulse.
+    SWITCH[1].init("bp_cuisine", High, 2, 5); 
     SWITCH[2].init("bp_2", 1, 2, 10); 
     SWITCH[3].init("bp_3", 1, 2, 10); 
     SWITCH[4].init("bp_4", 1, 2, 10); 
@@ -44,7 +44,6 @@ void setup() {
     //controle si les parametres bien pris en compte
     SWITCH[0].config();
     SWITCH[1].config();
-    
 
     pinMode(pin, INPUT);    // initialisation de la pin en mode INPUT
     digitalWrite(pin, HIGH); //pull up activé
@@ -53,60 +52,112 @@ void setup() {
 
 void loop() {
     
-    Serial.println("######################");
-    Serial.println("simu impulsion (moins de 1000 ms)");
-    SWITCH[0].update(High);
+    Serial.println("# simu impulsion (moins de 1000 ms)");
+    status("A000010");
+    SWITCH[0].update(0);
     delay(100);
-    SWITCH[0].update(High);
+    status("A000010");
+    SWITCH[0].update(0);
     delay(100);
-    SWITCH[0].update(High);
+    status("A000010");
+    SWITCH[0].update(0);
     delay(100);
-    status("00010");
-    SWITCH[0].update(Low);
-    status("10010");
-    SWITCH[0].update(Low);
-    status("00010");
+    status("A000010");
+    SWITCH[0].update(1);
+    delay(100);
+    status("A000010");
+    SWITCH[0].update(1);
+    delay(100);
+    SWITCH[0].update(1);
+    status("A000010");
+    delay(100);
+    SWITCH[0].update(0);
+    status("B100010");
+    delay(100);
+    SWITCH[0].update(0);
+    status("C000010");
+    
+    // simulation d'une pause
+    delay(100);
+    SWITCH[0].update(0);
+    delay(100);
+    SWITCH[0].update(0);
+    delay(100);
+    SWITCH[0].update(0);
+    
+    Serial.println("# simu double impulsion (moins de 1000 ms)");
+    SWITCH[0].update(1);
+    delay(100);
+    SWITCH[0].update(1);
+    delay(100);
+    SWITCH[0].update(1);
+    delay(100);
+    status("D000010");
+    SWITCH[0].update(0);
+    status("E010010");
+    SWITCH[0].update(0);
+    status("F000010");
 
-    Serial.println("simu appui maintenu (plus de 1000 ms)");  
+    // simulation d'une pause
     delay(100);
-    SWITCH[0].update(High);
+    SWITCH[0].update(0);
     delay(100);
-    SWITCH[0].update(High);
+    SWITCH[0].update(0);
     delay(100);
-    SWITCH[0].update(High);
+    SWITCH[0].update(0);
     delay(100);
-    SWITCH[0].update(High);
+    SWITCH[0].update(0);
     delay(100);
-    SWITCH[0].update(High);
+    SWITCH[0].update(0);
     delay(100);
-    SWITCH[0].update(High);
+    SWITCH[0].update(0);
     delay(100);
-    SWITCH[0].update(High);
+    SWITCH[0].update(0);
     delay(100);
-    SWITCH[0].update(High);
+    SWITCH[0].update(0);
     delay(100);
-    SWITCH[0].update(High);
+    SWITCH[0].update(0);
+
+    Serial.println("# simu appui maintenu (plus de 1000 ms)");  
     delay(100);
-    SWITCH[0].update(High);
+    SWITCH[0].update(1);
     delay(100);
-    SWITCH[0].update(High);
-    status("01100");
+    SWITCH[0].update(1);
     delay(100);
-    SWITCH[0].update(High);
-    status("01000");
+    SWITCH[0].update(1);
     delay(100);
-    SWITCH[0].update(Low);
-    status("00011");
+    SWITCH[0].update(1);
     delay(100);
-    SWITCH[0].update(Low);
-    status("00010");
+    SWITCH[0].update(1);
+    delay(100);
+    SWITCH[0].update(1);
+    delay(100);
+    SWITCH[0].update(1);
+    delay(100);
+    SWITCH[0].update(1);
+    delay(100);
+    SWITCH[0].update(1);
+    delay(100);
+    SWITCH[0].update(1);
+    delay(100);
+    SWITCH[0].update(1);
+    status("G001100");
+    delay(100);
+    SWITCH[0].update(1);
+    status("H001000");
+    delay(100);
+    SWITCH[0].update(0);
+    status("I000011");
+    delay(100);
+    SWITCH[0].update(0);
+    status("J000010");
     
     Serial.print(digitalRead(pin));
     
     while(1){
         
     delay(100);
-    SWITCH[0].update(digitalRead(pin));
+    SWITCH[1].update(digitalRead(pin));
         
     };
     
@@ -131,8 +182,9 @@ int status(char * _wait){
     Serial.print(_wait);
     Serial.print("/");
     Serial.print(SWITCH[0].isPulse(), DEC);
+    Serial.print(SWITCH[0].isDoublePulse(), DEC);
     Serial.print(SWITCH[0].isOn(), DEC);
-    Serial.print(SWITCH[0].isOnOns(), DEC);
+    Serial.print(SWITCH[0].isOnOSR(), DEC);
     Serial.print(SWITCH[0].isOff(), DEC);
-    Serial.println(SWITCH[0].isOffOns(), DEC);
+    Serial.println(SWITCH[0].isOnOSF(), DEC);
 }

@@ -43,26 +43,24 @@ Switch::Switch(){
 
 int Switch::init(char *_name, byte _parameter, byte _DI_address, byte _maintained_delay)
 {
+
+    parameter=_parameter;
+
     //lecture du type d'entrée (niveau haut ou niveau bas) pour ajuster le flag de changement d'état.
     //evitant ainsi de detecter un faux changement d'état au premier update du switch
-    if(R_HIGH){
-        W_LEVEL(false);
-    }
-    else
-    {
-        W_LEVEL(true);
-    }
+    W_LEVEL(not R_HIGH);
 
     //raz des bits d'etat
     W_PULSE(false);
-    W_MAINTAINED(false);
-    W_MAINTAINED_ONS(false);
-    W_RELEASED(true);
-    W_RELEASED_ONS(false);
+    W_DPULSE(false);
+    W_ON(false);
+    W_ON_OSR(false);
+    W_ON_OSF(false);
     W_HIGH(_parameter);
     W_TEMP(false);
 
     maintained_delay=_maintained_delay; // valeur pour declarer une entree en appui long
+    doublepulse_delay=0; // 
 
     DI_address=_DI_address;
 
@@ -76,7 +74,7 @@ int Switch::init(char *_name, byte _parameter, byte _DI_address, byte _maintaine
     Serial.print("-p=");
     Serial.print(DI_address, DEC);
     Serial.print("-high=");
-    Serial.println(R_HIGH, BIN);
+    Serial.print(R_HIGH, BIN);
     #endif
 
     return 0;
@@ -88,28 +86,38 @@ int Switch::update(byte _new_level)
 
     // RAZ de la memoire appuie pulse
     W_PULSE(false);
+    // RAZ de la memoire appuie double pulse
+    W_DPULSE(false);
     // RAZ Front montant switch released
-    W_RELEASED_ONS(false);
+    W_ON_OSF(false);
     // RAZ Front montant switch maintained
-    W_MAINTAINED_ONS(false);
+    W_ON_OSR(false);
 
     // on stocke le niveau de l'entree temporairement
     W_TEMP(_new_level);
 
     if (R_TEMP != R_LEVEL){  // Traitement du changement d'etat de l'entree
 
-        if (R_TEMP!=R_HIGH && !R_MAINTAINED){	// cas haut => bas, relachement du switch avant d'atteindre l'etat "on"
-            W_RELEASED(false); // info "off" est mis à 0
-            W_PULSE(true);  // info "appuie pulse" pour un cycle
-            #ifdef switch_lib_debug
-            Serial.print("B#pulse-");
-            Serial.println(name);
-            #endif
-            switch_status(TRIG, name, "pulse"); // envoi vers xpl
+        if (R_TEMP!=R_HIGH && !R_ON){	// cas haut => bas, relachement du switch avant d'atteindre l'etat "on"
+            if(doublepulse_delay>0){
+                W_DPULSE(true);  // mémorisation "double pulse"
+                #ifdef switch_lib_debug
+                Serial.print("B#dpulse-");
+                Serial.println(name);
+                #endif
+                switch_status(TRIG, name, "dpulse"); // envoi vers xpl
+            }else{
+                W_PULSE(true);  // info "appuie pulse" pour un cycle
+                doublepulse_delay=maintained_delay;
+                #ifdef switch_lib_debug
+                Serial.print("B#pulse-");
+                Serial.println(name);
+                #endif
+                switch_status(TRIG, name, "pulse"); // envoi vers xpl
+            }
         }
-        else if (R_TEMP!=R_HIGH && R_MAINTAINED){ // cas haut => bas, relachement du switch suite etat "on"
-            W_RELEASED(true);	// info "OFF" jusqu'à nouvel appui sur le switch
-            W_RELEASED_ONS(true);	// Front montant switch released
+        else if (R_TEMP!=R_HIGH && R_ON){ // cas haut => bas, relachement du switch suite etat "on"
+            W_ON_OSF(true);	// Front montant switch released
             #ifdef switch_lib_debug
             Serial.print("B#off-");
             Serial.println(name);
@@ -123,14 +131,13 @@ int Switch::update(byte _new_level)
 
     if( R_LEVEL==R_HIGH ){   //  Traitement selon etat de l'entree
 
-        if(R_MAINTAINED==0){
+        if(R_ON==0){
 
             mem_millis=mem_millis++; // incremente le compteur a chaque appel de routine tous les 100 ms
 
             if (mem_millis > maintained_delay){ // si appuie sur le switch depuis plus de x ms et pas encore detecte maintenu
-                W_RELEASED(false);      // info "off" est mis à 0
-                W_MAINTAINED(true);     // info "appuie maintenu" jusqu'au relachement du switch
-                W_MAINTAINED_ONS(true); // info "mode maintenu" un seul cycle
+                W_ON(true);     // info "appuie maintenu" jusqu'au relachement du switch
+                W_ON_OSR(true); // info "mode maintenu" un seul cycle
                 #ifdef switch_lib_debug
                 Serial.print("B#on-");
                 Serial.println(name);
@@ -140,12 +147,13 @@ int Switch::update(byte _new_level)
         }
 
     }
-    //~ else if(not isOff() && not isPulse()){	// si switch released /!\ remplacé car consomme plus de memoire (16 octets!!)
-    //~ else if(not R_RELEASED && not R_PULSE){	// si switch released
     else{	// si switch released
-        W_RELEASED(true);	// info "OFF" jusqu'à nouvel appui sur le switch
-        W_MAINTAINED(false);    // RAZ de la memoire "appuie maintenu"
+        W_ON(false);    // RAZ de la memoire "appuie maintenu"
         mem_millis=0;           // RAZ du compteur de duree d'appui
+    }
+
+    if(doublepulse_delay>0){
+        doublepulse_delay--;
     }
 
     return 0;
@@ -174,26 +182,32 @@ int Switch::isPulse(){
     
 }
 
-int Switch::isOn(){
+int Switch::isDoublePulse(){
     
-    return R_MAINTAINED;
+    return R_DPULSE;
     
 }
 
-int Switch::isOnOns(){
+int Switch::isOn(){
     
-    return R_MAINTAINED_ONS;
+    return R_ON;
+    
+}
+
+int Switch::isOnOSR(){
+    
+    return R_ON_OSR;
     
 }
 
 int Switch::isOff(){
     
-    return R_RELEASED;
+    return not R_ON;
     
 }
 
-int Switch::isOffOns(){
+int Switch::isOnOSF(){
     
-    return R_RELEASED_ONS;
+    return R_ON_OSF;
     
 }
