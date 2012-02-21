@@ -1,17 +1,17 @@
 //      switch_lib.cpp
-//      
+//
 //      Copyright 2012 Romain TISSOT CHARLOD <romain@romain-laptop>
-//      
+//
 //      This program is free software; you can redistribute it and/or modify
 //      it under the terms of the GNU General Public License as published by
 //      the Free Software Foundation; either version 2 of the License, or
 //      (at your option) any later version.
-//      
+//
 //      This program is distributed in the hope that it will be useful,
 //      but WITHOUT ANY WARRANTY; without even the implied warranty of
 //      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //      GNU General Public License for more details.
-//      
+//
 //      You should have received a copy of the GNU General Public License
 //      along with this program; if not, write to the Free Software
 //      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -60,7 +60,8 @@ int Switch::init(char *_name, byte _parameter, byte _DI_address, byte _maintaine
     W_TEMP(false);
 
     maintained_delay=_maintained_delay; // valeur pour declarer une entree en appui long
-    doublepulse_delay=0; // 
+    timer_maintained=0;  // init timer detection maintien
+    timer_doublepulse=0; // init timer double pulse
 
     DI_address=_DI_address;
 
@@ -84,45 +85,46 @@ int Switch::init(char *_name, byte _parameter, byte _DI_address, byte _maintaine
 int Switch::update(byte _new_level)
 {
 
-    // RAZ de la memoire appuie pulse
-    W_PULSE(false);
-    // RAZ de la memoire appuie double pulse
-    W_DPULSE(false);
-    // RAZ Front montant switch released
-    W_ON_OSF(false);
-    // RAZ Front montant switch maintained
-    W_ON_OSR(false);
+    W_PULSE(false);   // RAZ de la memoire appuie pulse
+    W_DPULSE(false);  // RAZ de la memoire appuie double pulse
+    W_ON_OSF(false);  // RAZ Front descendant 'on'
+    W_ON_OSR(false);  // RAZ Front montant 'on'
 
-    // on stocke le niveau de l'entree temporairement
-    W_TEMP(_new_level);
+    W_TEMP(_new_level);    // on stocke le niveau de l'entree temporairement
 
     if (R_TEMP != R_LEVEL){  // Traitement du changement d'etat de l'entree
 
-        if (R_TEMP!=R_HIGH && !R_ON){	// cas haut => bas, relachement du switch avant d'atteindre l'etat "on"
-            if(doublepulse_delay>0){
-                W_DPULSE(true);  // mémorisation "double pulse"
+        if (R_TEMP!=R_HIGH && !R_ON){   // cas haut => bas, relachement du switch avant d'atteindre l'etat "on"
+            if(timer_doublepulse>0){
+                W_DPULSE(true);  // info "appuie double pulse" pour un cycle
+                switch_status(TRIG, name, "dpulse"); // envoi vers exterieur (xpl...)
+
                 #ifdef switch_lib_debug
                 Serial.print("B#dpulse-");
                 Serial.println(name);
                 #endif
-                switch_status(TRIG, name, "dpulse"); // envoi vers xpl
+
             }else{
                 W_PULSE(true);  // info "appuie pulse" pour un cycle
-                doublepulse_delay=maintained_delay;
+                timer_doublepulse=maintained_delay; // sur detection d'un pulse, on lance le timer doublepulse: si un nouveau pulse est detecté avant la fin du décompteur, ce sera un double pulse
+                switch_status(TRIG, name, "pulse"); // envoi vers exterieur (xpl...)
+
                 #ifdef switch_lib_debug
                 Serial.print("B#pulse-");
                 Serial.println(name);
                 #endif
-                switch_status(TRIG, name, "pulse"); // envoi vers xpl
+
             }
         }
         else if (R_TEMP!=R_HIGH && R_ON){ // cas haut => bas, relachement du switch suite etat "on"
-            W_ON_OSF(true);	// Front montant switch released
+            W_ON_OSF(true);  // Front montant switch released
+            switch_status(TRIG, name, "off"); // envoi vers xpl
+
             #ifdef switch_lib_debug
             Serial.print("B#off-");
             Serial.println(name);
             #endif
-            switch_status(TRIG, name, "off"); // envoi vers xpl
+
         }
 
         W_LEVEL(R_TEMP); // a la fin du traitement on copie le nouvel etat de l'entree
@@ -133,27 +135,30 @@ int Switch::update(byte _new_level)
 
         if(R_ON==0){
 
-            mem_millis=mem_millis++; // incremente le compteur a chaque appel de routine tous les 100 ms
+            timer_maintained=timer_maintained++; // incremente le compteur a chaque appel de routine tous les 100 ms
 
-            if (mem_millis > maintained_delay){ // si appuie sur le switch depuis plus de x ms et pas encore detecte maintenu
+            if (timer_maintained > maintained_delay){ // si appuie sur le switch depuis plus de x ms et pas encore detecte maintenu
                 W_ON(true);     // info "appuie maintenu" jusqu'au relachement du switch
                 W_ON_OSR(true); // info "mode maintenu" un seul cycle
+
+                switch_status(TRIG, name, "on"); // envoi vers xpl
                 #ifdef switch_lib_debug
                 Serial.print("B#on-");
                 Serial.println(name);
                 #endif
-                switch_status(TRIG, name, "on"); // envoi vers xpl
+
             }
         }
 
     }
-    else{	// si switch released
-        W_ON(false);    // RAZ de la memoire "appuie maintenu"
-        mem_millis=0;           // RAZ du compteur de duree d'appui
+    else{  // si switch released
+        W_ON(false);         // RAZ de la memoire "appuie maintenu"
+        timer_maintained=0;  // RAZ du compteur de duree d'appui
     }
 
-    if(doublepulse_delay>0){
-        doublepulse_delay--;
+    // gestion du timer de détection du double impulsion
+    if(timer_doublepulse>0){
+        timer_doublepulse--;
     }
 
     return 0;
@@ -177,37 +182,37 @@ int Switch::config(){
 }
 
 int Switch::isPulse(){
-    
+
     return R_PULSE;
-    
+
 }
 
 int Switch::isDoublePulse(){
-    
+
     return R_DPULSE;
-    
+
 }
 
 int Switch::isOn(){
-    
+
     return R_ON;
-    
+
 }
 
 int Switch::isOnOSR(){
-    
+
     return R_ON_OSR;
-    
+
 }
 
 int Switch::isOff(){
-    
+
     return not R_ON;
-    
+
 }
 
 int Switch::isOnOSF(){
-    
+
     return R_ON_OSF;
-    
+
 }

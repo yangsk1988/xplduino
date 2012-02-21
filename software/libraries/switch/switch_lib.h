@@ -48,19 +48,18 @@
 class Switch
 {
     public:
-    
+
     //méthodes
     Switch();
-    
-    int init(char *_name, byte _parameter, byte _DI_address, byte _maintained_delay);
-    int update(byte _new_level);
-    int isPulse();
-    int isDoublePulse();
-    int isOn();
-    int isOnOSR();
-    int isOff();
-    int isOnOSF();
-    
+
+    int init(char *_name, byte _parameter, byte _DI_address, byte _maintained_delay); // initialise les paramètres du switch
+    int update(byte _new_level); // mis à jour de l'état de l'entrée
+    int isPulse();  // renvoi l'état pulse
+    int isDoublePulse();  // renvoi l'état double pulse
+    int isOn();    // renvoi l'état On
+    int isOnOSR(); // renvoi l'état du trigger Off -> On
+    int isOff();   // renvoi l'état Off
+    int isOnOSF(); // renvoi l'état du trigger On -> Off
 
     int config();//provisoire, juste pour relire les valeurs et vérifier qu'elles sont correctement memorisees. TODO: a supprimer
 
@@ -69,10 +68,10 @@ class Switch
     char   name[16+1];            // nom du switch
     byte   DI_address;            // entrée numérique de la fonction de pré-traitement
     byte   status;                // octet contenant les états calculés (cf détails)
-    byte   mem_millis;            // compteur incrémenté tant que l’entrée est à 1 (x100ms)
     byte   parameter;             // octet contenant un ensemble de paramètres (cf détails)
     byte   maintained_delay;      // délai en ms button pour considérer comme maintenu
-    byte   doublepulse_delay;      // délai en ms button pour considérer comme maintenu
+    byte   timer_maintained;      // compteur de temps incrémenté tant que l’entrée est à 1 (x100ms)
+    byte   timer_doublepulse;     // compteur de temps décrémenté dès qu'une impulsion est détecté
 
 };
 
