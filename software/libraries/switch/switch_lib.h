@@ -66,12 +66,16 @@ class Switch
     private:
 
     char   name[16+1];            // nom du switch
-    byte   DI_address;            // entrée numérique de la fonction de pré-traitement
-    byte   status;                // octet contenant les états calculés (cf détails)
-    byte   parameter;             // octet contenant un ensemble de paramètres (cf détails)
     byte   maintained_delay;      // délai en ms button pour considérer comme maintenu
     byte   timer_maintained;      // compteur de temps incrémenté tant que l’entrée est à 1 (x100ms)
     byte   timer_doublepulse;     // compteur de temps décrémenté dès qu'une impulsion est détecté
+
+    public:
+
+    byte   DI_address;            // entrée numérique de la fonction de pré-traitement
+    byte   status;                // octet contenant les états calculés (cf détails)
+    byte   parameter;             // octet contenant un ensemble de paramètres (cf détails)
+
 
 };
 

@@ -12,6 +12,11 @@
 
 Switch SWITCH[16];
 
+#define R_DPRE0(i)              bitRead(SWITCH[i].parameter, ADDR_PRE0)
+#define R_DPRE1(i)              bitRead(SWITCH[i].parameter, ADDR_PRE1)
+
+
+
 int pin = 7;
 #define High 0
 #define Low 1
@@ -24,7 +29,7 @@ void setup() {
 
     delay(1000);
 
-    SWITCH[0].init("bp_salon", 1, 1, 10); // bp_salon, information de type "on" si l'entrée est à 1, d'adresse "1", "on" si entrée à 1 plus de 10*100ms, sinon pulse.
+    SWITCH[0].init("bp_salon", 0xC1, 1, 10); // bp_salon, information de type "on" si l'entrée est à 1, d'adresse "1", "on" si entrée à 1 plus de 10*100ms, sinon pulse.
     SWITCH[1].init("bp_cuisine", High, 2, 5); 
     SWITCH[2].init("bp_2", 1, 2, 10); 
     SWITCH[3].init("bp_3", 1, 2, 10); 
@@ -47,6 +52,8 @@ void setup() {
 
     pinMode(pin, INPUT);    // initialisation de la pin en mode INPUT
     digitalWrite(pin, HIGH); //pull up activé
+
+    switch_hard();
 
 }
 
@@ -187,4 +194,27 @@ int status(char * _wait){
     Serial.print(SWITCH[0].isOnOSR(), DEC);
     Serial.print(SWITCH[0].isOff(), DEC);
     Serial.println(SWITCH[0].isOnOSF(), DEC);
+}
+
+
+int switch_hard(){
+
+    // récupération du type de DI_adress
+    byte type = (SWITCH[0].parameter >> 6);
+ 
+ #define PIN 0
+ #define MUX 1
+    
+    if(type == PIN){
+        Serial.println("PIN");
+        digital.read(SWITCH[0].DI_address);
+        
+    }
+    else if(type == MUX){
+        Serial.println("récup MUX");
+        // mux_in()
+    }
+
+    return 0;
+
 }
