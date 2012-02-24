@@ -9,8 +9,8 @@
 
 #include "switch_lib.h"
 
-
-Switch SWITCH[16];
+#define MAX_SWITCH 16
+Switch SWITCH[MAX_SWITCH];
 
 #define R_DPRE0(i)              bitRead(SWITCH[i].parameter, ADDR_PRE0)
 #define R_DPRE1(i)              bitRead(SWITCH[i].parameter, ADDR_PRE1)

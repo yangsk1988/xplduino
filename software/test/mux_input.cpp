@@ -67,5 +67,13 @@ byte mux_retreive(byte _DI_address){
 
 }
 
+int mux_update(){
+    /* recuperation multiplexer */
+    latch;
+    for(int i=0; i<MUX_NUMBER; i++){
+        Mux[i]=mux_input();
+    }
+}
+
 /* Create one global object */
 byte Mux[MUX_NUMBER]; 

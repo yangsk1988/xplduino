@@ -1,8 +1,10 @@
-#ifndef switch_lib_h
-#define switch_lib_h
+#ifndef switch_core_h
+#define switch_core_h
 
 #include "WProgram.h"
 #include <stdio.h>
+
+#define MAX_SWITCH 9
 
 #define ADDR_LEVEL          0   // 1=niveau precedent de l'entree
 #define ADDR_PULSE          1   // 1=appui pulse
@@ -15,8 +17,8 @@
 
 
 #define ADDR_HIGH           0   // 1=LOW, inverse le sens de l’entrée
-#define ADDR_PRE0           6   // fonction de pré-traitement associé
-#define ADDR_PRE1           7   // fonction de pré-traitement associé
+#define ADDR_PRE0           4   // fonction de pré-traitement associé
+#define ADDR_PRE1           5   // fonction de pré-traitement associé
 
 
 #define R_LEVEL             bitRead(status, ADDR_LEVEL)
@@ -60,11 +62,11 @@ class Switch
     int isOnOSR(); // renvoi l'état du trigger Off -> On
     int isOff();   // renvoi l'état Off
     int isOnOSF(); // renvoi l'état du trigger On -> Off
+    byte address();
 
     int config();//provisoire, juste pour relire les valeurs et vérifier qu'elles sont correctement memorisees. TODO: a supprimer
 
     private:
-
     char   name[16+1];            // nom du switch
     byte   maintained_delay;      // délai en ms button pour considérer comme maintenu
     byte   timer_maintained;      // compteur de temps incrémenté tant que l’entrée est à 1 (x100ms)

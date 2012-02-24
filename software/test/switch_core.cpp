@@ -1,4 +1,4 @@
-//      switch_lib.cpp
+//      switch_core.cpp
 //
 //      Copyright 2012 Romain TISSOT CHARLOD <romain@romain-laptop>
 //
@@ -29,7 +29,7 @@
 
 
 #include "WProgram.h"
-#include "switch_lib.h"
+#include "switch_core.h"
 #include <stdio.h>
 
 #define TRIG 0
@@ -72,10 +72,12 @@ int Switch::init(char *_name, byte _parameter, byte _DI_address, byte _maintaine
     Serial.print(name);
     Serial.print("'-ms=");
     Serial.print(maintained_delay, DEC);
+    Serial.print("-or=");
+    Serial.print(parameter >> 4, HEX);
     Serial.print("-p=");
-    Serial.print(DI_address, DEC);
+    Serial.print(DI_address, HEX);
     Serial.print("-high=");
-    Serial.print(R_HIGH, BIN);
+    Serial.println(R_HIGH, BIN);
     #endif
 
     return 0;
@@ -216,3 +218,10 @@ int Switch::isOnOSF(){
     return R_ON_OSF;
 
 }
+byte Switch::address(){
+
+    return DI_address;
+
+}
+
+
