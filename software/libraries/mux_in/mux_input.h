@@ -19,7 +19,7 @@
 
 #define DATA_PORT PORTD //pin6
 #define DATA_PIN PIND
-#define DATA_BIT PD6
+#define DATA_BIT PIND6
 
 #define  pull       CLOCK_PORT |= _BV(CLOCK);\
                     CLOCK_PORT &= ~_BV(CLOCK)
@@ -28,8 +28,10 @@
 
 #define  latch_on   LATCH_PORT |= (1 << LATCH)
 
+#define  latch      LATCH_PORT &= ~_BV(LATCH);\
+                    LATCH_PORT |= (1 << LATCH)
 
-//~ byte Mux[MUX_NUMBER];
+extern byte Mux[MUX_NUMBER];
 
 typedef struct StructAddress StructAddress;
 struct StructAddress
@@ -39,7 +41,7 @@ struct StructAddress
 };
 
 void mux_setup(); // setup
-int mux_input(void); // recupere les valeurs d'un multiplexeur
+byte mux_input(void); // recupere les valeurs d'un multiplexeur
 byte retreive(byte _DI_address); // recupere la valeur d'une entree
 
 

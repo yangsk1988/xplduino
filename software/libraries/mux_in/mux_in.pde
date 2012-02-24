@@ -1,6 +1,6 @@
 #include "mux_input.h"
 
-byte Mux[MUX_NUMBER];
+// byte Mux[MUX_NUMBER];
 
 void setup() {    // Debut du setup
 
@@ -13,17 +13,28 @@ void setup() {    // Debut du setup
 
 
 void loop(){
-    
-    //~ Serial.print(read());
-    //~ Serial.println(DATA_PIN & (1 << DATA_BIT),BIN);
-    //~ if bit_is_clear(DATA_PIN, DATA_BIT)
 
-    Mux[0]=0xFF;
-    Mux[1]=0xCC;
 
-    Serial.println("###########");
+    latch;
 
-    Serial.println(retreive(0x13),DEC);
+    Mux[0]=mux_input();
+    Mux[1]=mux_input();
+
+
+    Mux[0]=0xFF; // 1111 1111
+    Mux[1]=0xCC; // 1100 1100
+
+    Serial.println("# retreive port 0 #");
+
+    Serial.print(retreive(0x00),DEC);
+    Serial.print(retreive(0x01),DEC);
+    Serial.print(retreive(0x02),DEC);
+    Serial.print(retreive(0x03),DEC);
+    Serial.print(retreive(0x04),DEC);
+    Serial.print(retreive(0x05),DEC);
+    Serial.print(retreive(0x06),DEC);
+    Serial.println(retreive(0x07),DEC);
+
 
     delay(1000);
     

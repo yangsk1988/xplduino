@@ -24,13 +24,12 @@ void mux_setup() {    // Debut du setup
 
 
 // recupere les valeurs d'un multiplexeur
-int mux_input(void){
+byte mux_input(void){
 
     byte value = 0;
 
-    latch_off;
-
-    latch_on;
+    // latch_off;
+    // latch_on;
 
     bitWrite(value,0,bit_is_set(DATA_PIN, DATA_BIT));
     pull;
@@ -61,12 +60,12 @@ byte retreive(byte _DI_address){
 
     StructAddress _address;
 
-    _address.bitAddress= _DI_address & 0xFF;
+    _address.bitAddress= _DI_address & 0x0F;
     _address.byteAddress= (_DI_address >> 4);
-Serial.println(_DI_address,BIN);  
-Serial.println(_address.byteAddress,DEC);
-Serial.println(_address.bitAddress,DEC);
 
     return bitRead(Mux[_address.byteAddress],_address.bitAddress);
 
 }
+
+/* Create one global object */
+byte Mux[MUX_NUMBER]; 
