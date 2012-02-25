@@ -4,19 +4,21 @@
 #include "WProgram.h"
 #include <stdio.h>
 
-#define ADDR_LEVEL          0   // 1=niveau precedent de l'entree
-#define ADDR_PULSE          1   // 1=appui pulse
-#define ADDR_DPULSE         2   // 1=appui double pulse
-#define ADDR_ON             3   // 1=appui maintenu
-#define ADDR_ON_OSR         4   // 1=appui maintenu, sur un cycle
-#define ADDR_ON_OSF         5   // 1=switch relaché, sur un cycle
-#define ADDR_TEMP           6   // 1=nouveau niveau de l'entree
+#define MAX_SWITCH 9
+
+#define ADDR_LEVEL          6  // 1=niveau precedent de l'entree
+#define ADDR_PULSE          0   // 1=appui pulse
+#define ADDR_DPULSE         1   // 1=appui double pulse
+#define ADDR_ON             4  // 1=appui maintenu
+#define ADDR_ON_OSR         2   // 1=appui maintenu, sur un cycle
+#define ADDR_ON_OSF         3   // 1=switch relaché, sur un cycle
+#define ADDR_TEMP           5   // 1=nouveau niveau de l'entree
 
 
 
 #define ADDR_HIGH           0   // 1=LOW, inverse le sens de l’entrée
-#define ADDR_PRE0           6   // fonction de pré-traitement associé
-#define ADDR_PRE1           7   // fonction de pré-traitement associé
+#define ADDR_PRE0           4   // fonction de pré-traitement associé
+#define ADDR_PRE1           5   // fonction de pré-traitement associé
 
 
 #define R_LEVEL             bitRead(status, ADDR_LEVEL)
@@ -60,18 +62,18 @@ class Switch
     int isOnOSR(); // renvoi l'état du trigger Off -> On
     int isOff();   // renvoi l'état Off
     int isOnOSF(); // renvoi l'état du trigger On -> Off
-    byte address();
 
-    int config();//provisoire, juste pour relire les valeurs et vérifier qu'elles sont correctement memorisees. TODO: a supprimer
+    int config(); //provisoire, juste pour relire les valeurs et vérifier qu'elles sont correctement memorisees. TODO: a supprimer
 
     private:
-    char   name[16+1];            // nom du switch
+
     byte   maintained_delay;      // délai en ms button pour considérer comme maintenu
     byte   timer_maintained;      // compteur de temps incrémenté tant que l’entrée est à 1 (x100ms)
     byte   timer_doublepulse;     // compteur de temps décrémenté dès qu'une impulsion est détecté
 
     public:
 
+    char   name[16+1];            // nom du switch
     byte   DI_address;            // entrée numérique de la fonction de pré-traitement
     byte   status;                // octet contenant les états calculés (cf détails)
     byte   parameter;             // octet contenant un ensemble de paramètres (cf détails)
