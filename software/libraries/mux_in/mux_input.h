@@ -5,7 +5,7 @@
 #include "WProgram.h"
 #include <stdio.h>
 
-#define MUX_NUMBER 2
+#define MUX_NUMBER 1
 
 /// definition des macros pour piloter les pins
 
@@ -43,6 +43,7 @@ struct StructAddress
 void mux_setup(); // setup
 byte mux_input(void); // recupere les valeurs d'un multiplexeur
 byte mux_retreive(byte _DI_address); // recupere la valeur d'une entree
+int  mux_update(void); // recupere les valeurs des multiplexeurs
 
 
 #endif

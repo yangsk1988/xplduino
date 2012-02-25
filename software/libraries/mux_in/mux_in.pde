@@ -26,14 +26,14 @@ void loop(){
 
     Serial.println("# retreive port 0 #");
 
-    Serial.print(retreive(0x00),DEC);
-    Serial.print(retreive(0x01),DEC);
-    Serial.print(retreive(0x02),DEC);
-    Serial.print(retreive(0x03),DEC);
-    Serial.print(retreive(0x04),DEC);
-    Serial.print(retreive(0x05),DEC);
-    Serial.print(retreive(0x06),DEC);
-    Serial.println(retreive(0x07),DEC);
+    Serial.print(mux_retreive(0x00),DEC);
+    Serial.print(mux_retreive(0x01),DEC);
+    Serial.print(mux_retreive(0x02),DEC);
+    Serial.print(mux_retreive(0x03),DEC);
+    Serial.print(mux_retreive(0x04),DEC);
+    Serial.print(mux_retreive(0x05),DEC);
+    Serial.print(mux_retreive(0x06),DEC);
+    Serial.println(mux_retreive(0x07),DEC);
 
 
     delay(1000);

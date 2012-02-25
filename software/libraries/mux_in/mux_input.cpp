@@ -13,11 +13,9 @@ void mux_setup() {    // Debut du setup
     //set pins to output so you can control the shift register
     LATCH_DDR |= _BV(LATCH);
     CLOCK_DDR |= _BV(CLOCK);
-    //set pins to input
-    //~ DATA_DDR &= ~(1 << DATA_BIT);
 
     /* turn on internal pull-up resistor for the switch */
-    //~ DATA_PORT |= _BV(DATA_BIT);
+    DATA_PORT |= _BV(DATA_BIT);
 
 }
 
@@ -27,9 +25,6 @@ void mux_setup() {    // Debut du setup
 byte mux_input(void){
 
     byte value = 0;
-
-    // latch_off;
-    // latch_on;
 
     bitWrite(value,0,bit_is_set(DATA_PIN, DATA_BIT));
     pull;
@@ -46,7 +41,6 @@ byte mux_input(void){
     bitWrite(value,6,bit_is_set(DATA_PIN, DATA_BIT));
     pull;
     bitWrite(value,7,bit_is_set(DATA_PIN, DATA_BIT));
-
 
     return value;
 
@@ -65,6 +59,14 @@ byte mux_retreive(byte _DI_address){
 
     return bitRead(Mux[_address.byteAddress],_address.bitAddress);
 
+}
+
+int mux_update(){
+    /* recuperation multiplexer */
+    latch;
+    for(int i=0; i<MUX_NUMBER; i++){
+        Mux[i]=mux_input();
+    }
 }
 
 /* Create one global object */
