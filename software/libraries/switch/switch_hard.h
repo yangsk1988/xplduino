@@ -3,6 +3,4 @@
 
 int switch_hard();
 
-
-
 #endif
