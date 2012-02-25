@@ -43,7 +43,7 @@ struct StructAddress
 void mux_setup(); // setup
 byte mux_input(void); // recupere les valeurs d'un multiplexeur
 byte mux_retreive(byte _DI_address); // recupere la valeur d'une entree
-int mux_update(void); // recupere les valeurs des multiplexeurs
+int  mux_update(void); // recupere les valeurs des multiplexeurs
 
 
 #endif

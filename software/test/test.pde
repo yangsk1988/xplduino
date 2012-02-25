@@ -31,6 +31,8 @@ void setup() {
 
     delay(1000);
 
+    mux_setup();
+
     SWITCH[0].init("bp_salon", 0x11, 0x00, 10); // bp_salon, information de type "on" si l'entrée est à 1, d'adresse "1", "on" si entrée à 1 plus de 10*100ms, sinon pulse.
     SWITCH[1].init("bp_cuisine", 0x11, 0x01, 10); 
     SWITCH[2].init("bp_2", 0x11, 0x02, 10); 
@@ -38,15 +40,16 @@ void setup() {
     SWITCH[4].init("bp_4", 0x11, 0x04, 10); 
     SWITCH[5].init("bp_5", 0x11, 0x05, 10); 
     SWITCH[6].init("bp_6", 0x11, 0x06, 10); 
-    SWITCH[7].init("bp_7", 0x11, 0x07, 10); 
+    SWITCH[7].init("bp_7", 0x11, 0x07, 5); 
     SWITCH[8].init("bp_8", 0x01, pin, 10); 
-    // SWITCH[9].init("bp_9", 1, 2, 10); 
-    // SWITCH[10].init("bp_10", 1, 2, 10); 
-    // SWITCH[11].init("bp_11", 1, 2, 10); 
-    // SWITCH[12].init("bp_12", 1, 2, 10); 
-    // SWITCH[13].init("bp_13", 1, 2, 10); 
-    // SWITCH[14].init("bp_14", 1, 2, 10); 
-    // SWITCH[15].init("bp_15", 1, 2, 10); 
+    //~ SWITCH[9].init("bp_9", 0x10, 0x10, 10); 
+    //~ SWITCH[10].init("bp_10", 0x10, 0x10, 10); 
+    //~ SWITCH[11].init("bp_11", 0x10, 0x12, 10); 
+    //~ SWITCH[12].init("bp_12", 0x10, 0x13, 10); 
+    //~ SWITCH[13].init("bp_13", 0x10, 0x14, 10); 
+    //~ SWITCH[14].init("bp_14", 0x10, 0x15, 10); 
+    //~ SWITCH[15].init("bp_15", 0x10, 0x16, 10); 
+    //~ SWITCH[16].init("bp_16", 0x10, 0x17, 10); 
 
     pinMode(pin, INPUT);    // initialisation de la pin en mode INPUT
     digitalWrite(pin, HIGH); //pull up activé
@@ -65,6 +68,11 @@ void loop() {
     /* update des switchs */
     switch_hard();
 
+    //~ Serial.println(millis());
+    for(int i=0; i < MAX_SWITCH; i++){
+        switch_status_xpl(i);
+    }
+    //~ Serial.println(millis());
 }
 
 
@@ -75,6 +83,30 @@ int switch_status(byte _type, char * _name, char * _current){
     Serial.print(_name);
     Serial.print(": ");
     Serial.println(_current);
+
+}
+
+int switch_status_xpl(byte _id){
+
+    if(SWITCH[_id].status & 0x0F){
+
+        Serial.print("new state of ");
+        Serial.print(SWITCH[_id].name);
+        Serial.print(": ");
+
+        if(SWITCH[_id].status & 0x01){
+            Serial.println("Pulse");
+        }
+        else if(SWITCH[_id].status & 0x02){
+            Serial.println("Dpulse");
+        }
+        else if(SWITCH[_id].status & 0x04){
+            Serial.println("High");
+        }
+        else if(SWITCH[_id].status & 0x08){
+            Serial.println("Low");
+        }
+    }
 
 }
 
