@@ -26,21 +26,22 @@ byte mux_input(void){
 
     byte value = 0;
 
-    bitWrite(value,0,bit_is_set(DATA_PIN, DATA_BIT));
+    bitWrite(value,0,bit_is_clear(DATA_PIN, DATA_BIT));
     pull;
-    bitWrite(value,1,bit_is_set(DATA_PIN, DATA_BIT));
+    bitWrite(value,1,bit_is_clear(DATA_PIN, DATA_BIT));
     pull;
-    bitWrite(value,2,bit_is_set(DATA_PIN, DATA_BIT));
+    bitWrite(value,2,bit_is_clear(DATA_PIN, DATA_BIT));
     pull;
-    bitWrite(value,3,bit_is_set(DATA_PIN, DATA_BIT));
+    bitWrite(value,3,bit_is_clear(DATA_PIN, DATA_BIT));
     pull;
-    bitWrite(value,4,bit_is_set(DATA_PIN, DATA_BIT));
+    bitWrite(value,4,bit_is_clear(DATA_PIN, DATA_BIT));
     pull;
-    bitWrite(value,5,bit_is_set(DATA_PIN, DATA_BIT));
+    bitWrite(value,5,bit_is_clear(DATA_PIN, DATA_BIT));
     pull;
-    bitWrite(value,6,bit_is_set(DATA_PIN, DATA_BIT));
+    bitWrite(value,6,bit_is_clear(DATA_PIN, DATA_BIT));
     pull;
-    bitWrite(value,7,bit_is_set(DATA_PIN, DATA_BIT));
+    bitWrite(value,7,bit_is_clear(DATA_PIN, DATA_BIT));
+    pull;
 
     return value;
 
@@ -66,6 +67,7 @@ int mux_update(){
     latch;
     for(int i=0; i<MUX_NUMBER; i++){
         Mux[i]=mux_input();
+        //~ Serial.println(Mux[i], BIN);
     }
 }
 

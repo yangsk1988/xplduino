@@ -33,9 +33,10 @@
 #include <stdio.h>
 
 #define TRIG 0
-#define switch_lib_debug // comment this line to inhibit debug message and save memory
+//~ #define switch_lib_debug // comment this line to inhibit debug message and save memory
 
-extern int switch_status(byte _type, char * _name, char * _current);
+//~ extern int switch_status(byte _type, char * _name, char * _current);
+extern int switch_status_xpl(byte _id, byte _type);
 
 //constructor
 Switch::Switch(){
@@ -44,6 +45,7 @@ Switch::Switch(){
 int Switch::init(char *_name, byte _parameter, byte _DI_address, byte _maintained_delay)
 {
 
+    
     parameter=_parameter;
 
     //lecture du type d'entrée (niveau haut ou niveau bas) pour ajuster le flag de changement d'état.
@@ -56,7 +58,6 @@ int Switch::init(char *_name, byte _parameter, byte _DI_address, byte _maintaine
     W_ON(false);
     W_ON_OSR(false);
     W_ON_OSF(false);
-    W_HIGH(_parameter);
     W_TEMP(false);
 
     maintained_delay=_maintained_delay; // valeur pour declarer une entree en appui long
@@ -84,7 +85,7 @@ int Switch::init(char *_name, byte _parameter, byte _DI_address, byte _maintaine
 }
 
 
-int Switch::update(byte _new_level)
+int Switch::update(byte _id, byte _new_level)
 {
 
     W_PULSE(false);   // RAZ de la memoire appuie pulse
@@ -100,8 +101,8 @@ int Switch::update(byte _new_level)
             if(timer_doublepulse>0){
                 W_DPULSE(true);  // info "appuie double pulse" pour un cycle
                 //~ switch_status(TRIG, name, "dpulse"); // envoi vers exterieur (xpl...)
+                switch_status_xpl(_id, TRIG);
                 timer_doublepulse=0;
-
                 #ifdef switch_lib_debug
                 Serial.print("B#dpulse-");
                 Serial.println(name);
@@ -111,7 +112,7 @@ int Switch::update(byte _new_level)
                 W_PULSE(true);  // info "appuie pulse" pour un cycle
                 timer_doublepulse=maintained_delay; // sur detection d'un pulse, on lance le timer doublepulse: si un nouveau pulse est detecté avant la fin du décompteur, ce sera un double pulse
                 //~ switch_status(TRIG, name, "pulse"); // envoi vers exterieur (xpl...)
-
+                switch_status_xpl(_id, TRIG);
                 #ifdef switch_lib_debug
                 Serial.print("B#pulse-");
                 Serial.println(name);
@@ -122,7 +123,7 @@ int Switch::update(byte _new_level)
         else if (R_TEMP!=R_HIGH && R_ON){ // cas haut => bas, relachement du switch suite etat "on"
             W_ON_OSF(true);  // Front montant switch released
             //~ switch_status(TRIG, name, "off"); // envoi vers xpl
-
+            switch_status_xpl(_id, TRIG);
             #ifdef switch_lib_debug
             Serial.print("B#off-");
             Serial.println(name);
@@ -145,6 +146,7 @@ int Switch::update(byte _new_level)
                 W_ON_OSR(true); // info "mode maintenu" un seul cycle
 
                 //~ switch_status(TRIG, name, "on"); // envoi vers xpl
+                switch_status_xpl(_id, TRIG);
                 #ifdef switch_lib_debug
                 Serial.print("B#on-");
                 Serial.println(name);

@@ -4,7 +4,7 @@
 #include "WProgram.h"
 #include <stdio.h>
 
-#define MAX_SWITCH 9
+#define MAX_SWITCH 16
 
 #define ADDR_LEVEL          6  // 1=niveau precedent de l'entree
 #define ADDR_PULSE          0   // 1=appui pulse
@@ -55,7 +55,7 @@ class Switch
     Switch();
 
     int init(char *_name, byte _parameter, byte _DI_address, byte _maintained_delay); // initialise les paramètres du switch
-    int update(byte _new_level); // mis à jour de l'état de l'entrée
+    int update(byte _id, byte _new_level); // mis à jour de l'état de l'entrée
     int isPulse();  // renvoi l'état pulse
     int isDoublePulse();  // renvoi l'état double pulse
     int isOn();    // renvoi l'état On

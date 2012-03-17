@@ -5,21 +5,21 @@
 #include "WProgram.h"
 #include <stdio.h>
 
-#define MUX_NUMBER 1
+#define MUX_NUMBER 2 // nombre de multiplexeur chainés (2 par carte digital 16 in)
 
 /// definition des macros pour piloter les pins
 
-#define LATCH_DDR DDRB //pin8
-#define LATCH_PORT PORTB
-#define LATCH PINB0
+#define LATCH_DDR DDRD //pin8
+#define LATCH_PORT PORTD
+#define LATCH PIND7
 
-#define CLOCK_DDR DDRD //pin7
-#define CLOCK_PORT PORTD
-#define CLOCK PIND7
+#define CLOCK_DDR DDRB //pin7
+#define CLOCK_PORT PORTB
+#define CLOCK PINB0
 
-#define DATA_PORT PORTD //pin6
-#define DATA_PIN PIND
-#define DATA_BIT PIND6
+#define DATA_PORT PORTB //pin6
+#define DATA_PIN PINB
+#define DATA_BIT PINB1
 
 #define  pull       CLOCK_PORT |= _BV(CLOCK);\
                     CLOCK_PORT &= ~_BV(CLOCK)
