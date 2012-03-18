@@ -19,8 +19,8 @@ byte pulse_1000ms=0;
 byte pulse_500ms=0;
 
 
-ISR(TIMER0_COMPA_vect){
-  TCCR0A = 0;
+ISR(TIMER2_COMPA_vect){
+  TCCR2A = 0;
   c10ms++;
 }
 
@@ -30,12 +30,12 @@ void clock_setup() {
   
 LED_DDR |= _BV(LED);
 
-TCCR0A = 0;
+TCCR2A = 0;
 
-OCR0A=0x9C; //156
+OCR2A=0x9C; //156
 
-TIMSK0=(1<<OCIE0A)|(0<<TOIE0)|(0<<OCIE0B);
-TCCR0A=(1<<CS02)|(0<<CS01)|(1<<CS00);
+TIMSK2=(1<<OCIE2A)|(0<<TOIE2)|(0<<OCIE2B);
+TCCR2A=(1<<CS22)|(0<<CS21)|(1<<CS20);
 sei();
 delay(1);
 
@@ -49,19 +49,19 @@ void clock_update() {
   pulse_1000ms=0;
   pulse_500ms=0;    
  
-  if (c10ms>=10){ // 100 ms
+  if (c10ms>=100){ // 100 ms
+    c10ms=0;
     c500ms++;
     c1000ms++;
-    c10ms=0;
     pulse_100ms=1;
   }
   
-  if (c500ms>=50){ // 500 ms
+  if (c500ms>=5){ // 500 ms
     c500ms=0;
     pulse_500ms=1;
   }
   
-  if (c1000ms>=100){ // 1 seconde
+  if (c1000ms>=10){ // 1 seconde
     c1000ms=0;
     pulse_1000ms=1;
   }

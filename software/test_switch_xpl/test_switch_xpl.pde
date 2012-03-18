@@ -82,6 +82,7 @@ void loop() {
         /* update des switchs */
         switch_hard();
         Serial.println(millis()-temp);
+        //~ Serial.println(millis());
     }
 
 }
