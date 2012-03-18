@@ -32,7 +32,7 @@
 #include "switch_core.h"
 #include <stdio.h>
 
-#define TRIG 0
+
 //~ #define switch_lib_debug // comment this line to inhibit debug message and save memory
 
 //~ extern int switch_status(byte _type, char * _name, char * _current);
@@ -85,8 +85,10 @@ int Switch::init(char *_name, byte _parameter, byte _DI_address, byte _maintaine
 }
 
 
-int Switch::update(byte _id, byte _new_level)
+int Switch::update(byte _new_level)
 {
+
+    byte return_value=0;
 
     W_PULSE(false);   // RAZ de la memoire appuie pulse
     W_DPULSE(false);  // RAZ de la memoire appuie double pulse
@@ -101,7 +103,8 @@ int Switch::update(byte _id, byte _new_level)
             if(timer_doublepulse>0){
                 W_DPULSE(true);  // info "appuie double pulse" pour un cycle
                 //~ switch_status(TRIG, name, "dpulse"); // envoi vers exterieur (xpl...)
-                switch_status_xpl(_id, TRIG);
+                //~ switch_status_xpl(_id, TRIG);
+                return_value=ADDR_DPULSE;
                 timer_doublepulse=0;
                 #ifdef switch_lib_debug
                 Serial.print("B#dpulse-");
@@ -112,7 +115,8 @@ int Switch::update(byte _id, byte _new_level)
                 W_PULSE(true);  // info "appuie pulse" pour un cycle
                 timer_doublepulse=maintained_delay; // sur detection d'un pulse, on lance le timer doublepulse: si un nouveau pulse est detecté avant la fin du décompteur, ce sera un double pulse
                 //~ switch_status(TRIG, name, "pulse"); // envoi vers exterieur (xpl...)
-                switch_status_xpl(_id, TRIG);
+                //~ switch_status_xpl(_id, TRIG);
+                return_value=ADDR_PULSE;
                 #ifdef switch_lib_debug
                 Serial.print("B#pulse-");
                 Serial.println(name);
@@ -123,7 +127,8 @@ int Switch::update(byte _id, byte _new_level)
         else if (R_TEMP!=R_HIGH && R_ON){ // cas haut => bas, relachement du switch suite etat "on"
             W_ON_OSF(true);  // Front montant switch released
             //~ switch_status(TRIG, name, "off"); // envoi vers xpl
-            switch_status_xpl(_id, TRIG);
+            //~ switch_status_xpl(_id, TRIG);
+            return_value=ADDR_ON_OSF;
             #ifdef switch_lib_debug
             Serial.print("B#off-");
             Serial.println(name);
@@ -146,7 +151,8 @@ int Switch::update(byte _id, byte _new_level)
                 W_ON_OSR(true); // info "mode maintenu" un seul cycle
 
                 //~ switch_status(TRIG, name, "on"); // envoi vers xpl
-                switch_status_xpl(_id, TRIG);
+                //~ switch_status_xpl(_id, TRIG);
+                return_value=ADDR_ON_OSR;
                 #ifdef switch_lib_debug
                 Serial.print("B#on-");
                 Serial.println(name);
@@ -166,7 +172,7 @@ int Switch::update(byte _id, byte _new_level)
         timer_doublepulse--;
     }
 
-    return 0;
+    return return_value;
 }
 
 

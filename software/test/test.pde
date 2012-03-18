@@ -20,8 +20,12 @@ Switch SWITCH[MAX_SWITCH];
 #define R_DPRE1(i)              bitRead(SWITCH[i].parameter, ADDR_PRE1)
 
 
-#define High 0
-#define Low 1
+//~ #define High 0
+//~ #define Low 1
+
+// Packet udpPayload, must be big enough to packet and payload
+#define udpPayload_SIZE 300
+uint8_t buf[udpPayload_SIZE+1];
 
 
 void setup() {
@@ -70,49 +74,6 @@ void loop() {
 }
 
 
-int switch_status(byte _type, char * _name, char * _current){
 
-    //ici, le code pourra être l'envoi sur liaison série, ou sur XPL, ou tout autre canal
-    Serial.print("new state of ");
-    Serial.print(_name);
-    Serial.print(": ");
-    Serial.println(_current);
-    Serial.println(freeMemory());
-}
 
-int switch_status_xpl(byte _id, byte _type){
 
-    if(SWITCH[_id].status & 0x0F){
-        Serial.println(freeMemory());
-        Serial.print("new state of ");
-        Serial.print(SWITCH[_id].name);
-        Serial.print(": ");
-
-        if(SWITCH[_id].status & 0x01){
-            Serial.println("Pulse");
-        }
-        else if(SWITCH[_id].status & 0x02){
-            Serial.println("Dpulse");
-        }
-        else if(SWITCH[_id].status & 0x04){
-            Serial.println("High");
-        }
-        else if(SWITCH[_id].status & 0x08){
-            Serial.println("Low");
-        }
-    }
-
-}
-
-int status(char * _wait){
-
-    Serial.print("wait: ");
-    Serial.print(_wait);
-    Serial.print("/");
-    Serial.print(SWITCH[0].isPulse(), DEC);
-    Serial.print(SWITCH[0].isDoublePulse(), DEC);
-    Serial.print(SWITCH[0].isOn(), DEC);
-    Serial.print(SWITCH[0].isOnOSR(), DEC);
-    Serial.print(SWITCH[0].isOff(), DEC);
-    Serial.println(SWITCH[0].isOnOSF(), DEC);
-}
