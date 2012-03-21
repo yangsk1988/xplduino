@@ -6,14 +6,17 @@
 
 #define MAX_SWITCH 16
 
-#define ADDR_LEVEL          6  // 1=niveau precedent de l'entree
-#define ADDR_PULSE          0   // 1=appui pulse
-#define ADDR_DPULSE         1   // 1=appui double pulse
-#define ADDR_ON             4  // 1=appui maintenu
-#define ADDR_ON_OSR         2   // 1=appui maintenu, sur un cycle
-#define ADDR_ON_OSF         3   // 1=switch relaché, sur un cycle
-#define ADDR_TEMP           5   // 1=nouveau niveau de l'entree
+#define T_CMND 1
+#define T_STAT 2
+#define T_TRIG 3
 
+#define ADDR_TEMP           0   // 1=nouveau niveau de l'entree
+#define ADDR_PULSE          1   // 1=appui pulse
+#define ADDR_DPULSE         2   // 1=appui double pulse
+#define ADDR_ON             3  // 1=appui maintenu
+#define ADDR_ON_OSR         4   // 1=appui maintenu, sur un cycle
+#define ADDR_ON_OSF         5   // 1=switch relaché, sur un cycle
+#define ADDR_LEVEL          6  // 1=niveau precedent de l'entree
 
 
 #define ADDR_HIGH           0   // 1=LOW, inverse le sens de l’entrée
@@ -55,7 +58,7 @@ class Switch
     Switch();
 
     int init(char *_name, byte _parameter, byte _DI_address, byte _maintained_delay); // initialise les paramètres du switch
-    int update(byte _id, byte _new_level); // mis à jour de l'état de l'entrée
+    int update(byte _new_level); // mis à jour de l'état de l'entrée
     int isPulse();  // renvoi l'état pulse
     int isDoublePulse();  // renvoi l'état double pulse
     int isOn();    // renvoi l'état On

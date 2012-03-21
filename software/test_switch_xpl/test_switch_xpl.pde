@@ -75,13 +75,13 @@ void loop() {
     clock_update();
 
     if(pulse_100ms){
-        temp=millis();
+        //~ temp=millis();
         /* recupere les valeurs des multiplexeurs */
         mux_update();
 
         /* update des switchs */
         switch_hard();
-        Serial.println(millis()-temp);
+        //~ Serial.println(millis()-temp);
         //~ Serial.println(millis());
     }
 
