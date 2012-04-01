@@ -1,0 +1,342 @@
+# EESchema Netlist Version 1.1 created  18/03/2012 17:20:00
+(
+ ( /4F455909 SM0805 C101 100pF
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /4F612094 $noname$ D101 DIODE
+  ( 1 N-000052 )
+  ( 2 +12V )
+ )
+ ( /4F61208A $noname$ D102 DIODE
+  ( 1 N-000001 )
+  ( 2 +12V )
+ )
+ ( /4F612082 $noname$ D103 DIODE
+  ( 1 N-000013 )
+  ( 2 +12V )
+ )
+ ( /4F612078 $noname$ D104 DIODE
+  ( 1 N-000020 )
+  ( 2 +12V )
+ )
+ ( /4F611FD8 $noname$ D105 DIODE
+  ( 1 N-000054 )
+  ( 2 +12V )
+ )
+ ( /4F611FE3 $noname$ D106 DIODE
+  ( 1 N-000055 )
+  ( 2 +12V )
+ )
+ ( /4F612015 $noname$ D107 DIODE
+  ( 1 N-000056 )
+  ( 2 +12V )
+ )
+ ( /4F612014 $noname$ D108 DIODE
+  ( 1 N-000053 )
+  ( 2 +12V )
+ )
+ ( /4F455CB8 $noname$ K101 CONN_3
+  ( 1 +12V )
+  ( 2 GND )
+  ( 3 +5V )
+ )
+ ( /4F455B0A $noname$ K102 J_IN
+  ( 1 N-000051 )
+  ( 2 N-000027 )
+  ( 3 N-000024 )
+ )
+ ( /4F455C8B $noname$ K103 CONN_3
+  ( 1 +5V )
+  ( 2 GND )
+  ( 3 +12V )
+ )
+ ( /4F455C15 $noname$ K104 J_OUT
+  ( 1 N-000025 )
+  ( 2 N-000027 )
+  ( 3 N-000051 )
+ )
+ ( /4F6116EC $noname$ K105 G5LA-1-12VDC
+  ( 1 N-000043 )
+  ( 2 +12V )
+  ( 3 N-000038 )
+  ( 4 N-000042 )
+  ( 5 N-000052 )
+ )
+ ( /4F61173C $noname$ K106 G5LA-1-12VDC
+  ( 1 N-000045 )
+  ( 2 +12V )
+  ( 3 N-000039 )
+  ( 4 N-000044 )
+  ( 5 N-000001 )
+ )
+ ( /4F611753 $noname$ K107 G5LA-1-12VDC
+  ( 1 N-000047 )
+  ( 2 +12V )
+  ( 3 N-000041 )
+  ( 4 N-000046 )
+  ( 5 N-000013 )
+ )
+ ( /4F61177A $noname$ K108 G5LA-1-12VDC
+  ( 1 N-000032 )
+  ( 2 +12V )
+  ( 3 N-000009 )
+  ( 4 N-000040 )
+  ( 5 N-000020 )
+ )
+ ( /4F611779 $noname$ K109 G5LA-1-12VDC
+  ( 1 N-000036 )
+  ( 2 +12V )
+  ( 3 N-000050 )
+  ( 4 N-000049 )
+  ( 5 N-000054 )
+ )
+ ( /4F611778 $noname$ K110 G5LA-1-12VDC
+  ( 1 N-000048 )
+  ( 2 +12V )
+  ( 3 N-000011 )
+  ( 4 N-000010 )
+  ( 5 N-000055 )
+ )
+ ( /4F61181F $noname$ K111 G5LA-1-12VDC
+  ( 1 N-000035 )
+  ( 2 +12V )
+  ( 3 N-000034 )
+  ( 4 N-000033 )
+  ( 5 N-000056 )
+ )
+ ( /4F611820 $noname$ K112 G5LA-1-12VDC
+  ( 1 N-000037 )
+  ( 2 +12V )
+  ( 3 N-000008 )
+  ( 4 N-000012 )
+  ( 5 N-000053 )
+ )
+ ( /4F6118A3 $noname$ K113 CONN_3
+  ( 1 N-000038 )
+  ( 2 N-000043 )
+  ( 3 N-000042 )
+ )
+ ( /4F6118AA $noname$ K114 CONN_3
+  ( 1 N-000039 )
+  ( 2 N-000045 )
+  ( 3 N-000044 )
+ )
+ ( /4F6118B1 $noname$ K115 CONN_3
+  ( 1 N-000041 )
+  ( 2 N-000047 )
+  ( 3 N-000046 )
+ )
+ ( /4F6118B8 $noname$ K116 CONN_3
+  ( 1 N-000009 )
+  ( 2 N-000032 )
+  ( 3 N-000040 )
+ )
+ ( /4F6118BF $noname$ K117 CONN_3
+  ( 1 N-000050 )
+  ( 2 N-000036 )
+  ( 3 N-000049 )
+ )
+ ( /4F6118D8 $noname$ K118 CONN_3
+  ( 1 N-000011 )
+  ( 2 N-000048 )
+  ( 3 N-000010 )
+ )
+ ( /4F6118DF $noname$ K119 CONN_3
+  ( 1 N-000034 )
+  ( 2 N-000035 )
+  ( 3 N-000033 )
+ )
+ ( /4F6118E9 $noname$ K120 CONN_3
+  ( 1 N-000008 )
+  ( 2 N-000037 )
+  ( 3 N-000012 )
+ )
+ ( /4F63A4AA $noname$ Q101 DSS20201L_NPN
+  ( 1 GND )
+  ( 2 N-000014 )
+  ( 3 N-000052 )
+ )
+ ( /4F63A48A $noname$ Q102 DSS20201L_NPN
+  ( 1 GND )
+  ( 2 N-000018 )
+  ( 3 N-000001 )
+ )
+ ( /4F63A43A $noname$ Q103 DSS20201L_NPN
+  ( 1 GND )
+  ( 2 N-000022 )
+  ( 3 N-000013 )
+ )
+ ( /4F63A304 $noname$ Q104 DSS20201L_NPN
+  ( 1 GND )
+  ( 2 N-000021 )
+  ( 3 N-000020 )
+ )
+ ( /4F639137 $noname$ Q105 DSS20201L_NPN
+  ( 1 GND )
+  ( 2 N-000019 )
+  ( 3 N-000054 )
+ )
+ ( /4F6122BE $noname$ Q106 DSS20201L_NPN
+  ( 1 GND )
+  ( 2 N-000004 )
+  ( 3 N-000055 )
+ )
+ ( /4F61215A $noname$ Q107 DSS20201L_NPN
+  ( 1 GND )
+  ( 2 N-000006 )
+  ( 3 N-000056 )
+ )
+ ( /4F61212B $noname$ Q108 DSS20201L_NPN
+  ( 1 GND )
+  ( 2 N-000002 )
+  ( 3 N-000053 )
+ )
+ ( /4F63A4D0 SM0805 R101 R
+  ( 1 N-000015 )
+  ( 2 N-000014 )
+ )
+ ( /4F63A4C9 SM0805 R102 R
+  ( 1 N-000031 )
+  ( 2 N-000018 )
+ )
+ ( /4F63A45C SM0805 R103 R
+  ( 1 N-000017 )
+  ( 2 N-000022 )
+ )
+ ( /4F63A3EA SM0805 R104 R
+  ( 1 N-000030 )
+  ( 2 N-000021 )
+ )
+ ( /4F63A409 SM0805 R105 R
+  ( 1 N-000016 )
+  ( 2 N-000019 )
+ )
+ ( /4F6391B7 SM0805 R106 R
+  ( 1 N-000029 )
+  ( 2 N-000004 )
+ )
+ ( /4F6391BF SM0805 R107 R
+  ( 1 N-000007 )
+  ( 2 N-000006 )
+ )
+ ( /4F6391DF SM0805 R108 R
+  ( 1 N-000028 )
+  ( 2 N-000002 )
+ )
+ ( /4F4558E6 $noname$ U101 74HC595
+  ( 1 N-000031 )
+  ( 2 N-000017 )
+  ( 3 N-000030 )
+  ( 4 N-000016 )
+  ( 5 N-000029 )
+  ( 6 N-000007 )
+  ( 7 N-000028 )
+  ( 8 GND )
+  ( 9 N-000025 )
+  ( 10 +5V )
+  ( 11 N-000027 )
+  ( 12 N-000024 )
+  ( 13 GND )
+  ( 14 N-000051 )
+  ( 15 N-000015 )
+  ( 16 ? )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C101
+ SM*
+ C?
+ C1-1
+$endlist
+$component D101
+ D?
+ S*
+$endlist
+$component D102
+ D?
+ S*
+$endlist
+$component D103
+ D?
+ S*
+$endlist
+$component D104
+ D?
+ S*
+$endlist
+$component D105
+ D?
+ S*
+$endlist
+$component D106
+ D?
+ S*
+$endlist
+$component D107
+ D?
+ S*
+$endlist
+$component D108
+ D?
+ S*
+$endlist
+$component R101
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R102
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R103
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R104
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R105
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R106
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R107
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R108
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
