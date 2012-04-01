@@ -7,12 +7,25 @@
 //          :                                                   //
 //****************************************************************
 
+#include "config.h"	// specific project data
 
 #include "lighting_xpl.h"
 #include "lighting_core.h"
 #include "lighting_hard.h"
 
-Lighting LIGHTING[2];
+#include "MemoryFree.h"
+#include "EtherShield_broadcast.h"
+#include "clock.h"
+/// à remplacer gromain par xplduino
+char vendor_id[8+2]={"gromain\0"};		// vendor id
+char device_id[8+2]={"lighting\0"};		// device id
+char instance_id[18+1]={"garage\0"};	// instance id
+
+Lighting LIGHTING[LIGHTING_MAX];
+
+extern byte pulse_100ms;
+extern byte pulse_1000ms;
+extern byte pulse_500ms;
 
 void setup() {
 
@@ -21,27 +34,60 @@ void setup() {
 
     delay(1000);
 
-    LIGHTING[0].init("lum_salon", 0, 0x00, 10);
-    LIGHTING[1].init("lum_cuisine", 0, 0x04, 10);
+    setup_udp();
+    
+    clock_setup();
+
+    LIGHTING[0].init("grange", 0, 0x00, 10);
+    LIGHTING[1].init("cuisine", 0, 0x04, 10);
+    LIGHTING[2].init("lum2", 0, 0x04, 10);
+    LIGHTING[3].init("lum3", 0, 0x05, 10);
+    LIGHTING[4].init("lum4", 0, 0x06, 10);
+    LIGHTING[5].init("lum5", 0, 0x05, 10);
+    LIGHTING[6].init("lum6", 0, 0x06, 10);
+    LIGHTING[7].init("lum7", 0, 0x05, 10);
     
     lighting_hard_init();
     
     delay(1000);
 
-//~ LIGHTING[1].new_setpoint(80,10);
-}
-
-void loop() {
+    Serial.print("free RAM in kB: ");
+    Serial.println(freeMemory());
 
 
     LIGHTING[0].toggle(20,50,10,60);
     LIGHTING[1].toggle(0,100,10,60);
     
-    lighting_hard();
+    //test envoi d'une commande lighting vers un autre xplduino
+    lighting_xpl_cmdlighting("grange", "grenier", -1, 2);
 
-    delay(1000);
+}
+
+void loop() {
+
+    clock_update();
+
+    loop_udp();
+
+    if(pulse_100ms){
 
 
+
+        /* update des lighting */
+        lighting_hard();
+
+        //~ Serial.println(millis()-temp);
+        //~ Serial.println(millis());
+    }
+
+    if(pulse_500ms){
+        lighting_hard_status();
+    }
+
+    if(pulse_1000ms){
+        //~ LIGHTING[0].toggle(20,50,10,60);
+        //~ LIGHTING[1].toggle(0,100,10,60);
+    }
 }
 
 

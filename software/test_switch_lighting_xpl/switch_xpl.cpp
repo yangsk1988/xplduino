@@ -11,10 +11,10 @@ extern uint8_t buf[udpPayload_SIZE+1];
 
 
 //~ extern char device_id[8+2];		// device id
-//~ extern char instance_id[18+2];		// instance id
+extern char instance_id[];		// instance id
  ///provisoire
 //~ char device_id[8+2]="switch";		// device id
-char instance_id[18+2]="maison";		// instance id
+//~ char instance_id[18+2]="maison";		// instance id
 
 
 //~ #define UDP_DATA_P 0 ///provisoire
@@ -127,12 +127,13 @@ int switch_status(byte _switch_id, byte _type){
     SendBroadcastData(buf, i);
 
     // pour le debug du message
-    //~ for(i=UDP_DATA_P;i<200;i++){
-        //~ Serial.print(buf[i]);
-    //~ if(buf[i]==0)
-        //~ break;
-    //~ }
-
+#ifdef DEBUG_SWITCH_XPL
+    for(i=UDP_DATA_P;i<200;i++){
+        Serial.print(buf[i]);
+    if(buf[i]==0)
+        break;
+    }
+#endif
 
 
     return 1;
