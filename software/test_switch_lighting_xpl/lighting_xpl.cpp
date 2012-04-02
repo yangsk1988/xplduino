@@ -305,12 +305,12 @@ while(udpPayload[i]!='}'){
 		//~ lighting_xpl_status(T_TRIG, device, 65);
 		//~ delay(5000);
 
-		//~ Serial.print("device= ");
-		//~ Serial.println(device);
-		//~ Serial.print("level= ");
-		//~ Serial.println(int_level,DEC);
-		//~ Serial.print("fade= ");
-		//~ Serial.println(int_fade);
+		Serial.print("device= ");
+		Serial.println(device);
+		Serial.print("level= ");
+		Serial.println(int_level,DEC);
+		Serial.print("fade= ");
+		Serial.println(int_fade);
 	
 	return 0;
 	}else{return i;}
@@ -451,7 +451,7 @@ int lighting_find(char *_name, int first){
 
 const prog_uint8_t string_cmnd_target[] PROGMEM = {"\ntarget=gromain-lighting.\0"};
 const prog_uint8_t string_cmnd_schema[] PROGMEM = {"\n}\nlighting.basic\n{\ncommand=goto\ndevice=\0"};
-const prog_uint8_t string_cmnd_fade[] PROGMEM = {"\nfade=\0"};
+const prog_uint8_t string_cmnd_fade[] PROGMEM = {"\nfade-rate=\0"};
 
 int lighting_xpl_cmdlighting(char *_instance_id, char *_device, byte _new_setpoint, byte _new_fade){
 

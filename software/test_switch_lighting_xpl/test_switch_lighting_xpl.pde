@@ -77,7 +77,7 @@ void setup() {
     SWITCH[15].init("bp_15", 0x11, 0x17, 10); 
 
     LIGHTING[0].init("grange", 0, 0x00, 10);
-    LIGHTING[1].init("cuisine", 0, 0x04, 10);
+    LIGHTING[1].init("cuisine", 0, 0x00, 10);
     LIGHTING[2].init("wc", 0, 0x04, 10);
     LIGHTING[3].init("lum3", 0, 0x05, 10);
     LIGHTING[4].init("lum4", 0, 0x06, 10);
@@ -96,7 +96,7 @@ void setup() {
     LIGHTING[1].toggle(0,100,10,60);
     
     //test envoi d'une commande lighting vers un autre xplduino
-    lighting_xpl_cmdlighting("grange", "grenier", -1, 2);
+    lighting_xpl_cmdlighting("grange", "grenier", 0, 2);
 
 }
 
@@ -116,6 +116,11 @@ void loop() {
         //~ Serial.println(millis()-temp);
         //~ Serial.println(millis());
         
+        if(bitRead(SWITCH[0].status, ADDR_PULSE))
+            lighting_xpl_cmdlighting("garage", "wc", 50, 2);
+
+        if(bitRead(SWITCH[0].status, ADDR_DPULSE))
+            lighting_xpl_cmdlighting("garage", "wc", 0, 2);
         
         /* update des lighting */
         lighting_hard();

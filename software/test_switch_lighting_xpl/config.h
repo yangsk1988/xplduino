@@ -10,13 +10,13 @@
 
 
 /// debug message xpl
-//~ #define DEBUG_INCOMING
+#define DEBUG_INCOMING
 //~ #define DEBUG_OUTCOMING
 
 #define DIMMER_EXPANDER
 
 //~ #define DEBUG_SWITCH_XPL
-//~ #define DEBUG_LIGHTING_XPL
+#define DEBUG_LIGHTING_XPL
 
 #define button_activated
 
