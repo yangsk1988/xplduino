@@ -106,7 +106,8 @@ int Lighting::toggle(byte _mini, byte _maxi, byte _fade, int _timer)
 	// si maxi = 255 alors on utilise la derniere valeur enregistre
 	if(_maxi == 255){
 
-		_maxi= constrain(last_setpoint,5,100);
+		//~ _maxi= constrain(last_setpoint,5,100);
+		_maxi= constrain(last_setpoint,0,100);
 		
 		if(setpoint>0)
 		{
@@ -199,7 +200,13 @@ int Lighting::extinction_light(boolean _pulse)
 
 }
 
+int Lighting::stop(void)		// force de l'arret de la variation
+{
 
+	//~ current_last=LIGHTING[_id].current_request=dimmer_stop(_id);
+
+	return 0;
+}
 
 
 

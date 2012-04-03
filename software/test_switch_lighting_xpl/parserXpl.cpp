@@ -43,7 +43,7 @@ int parse(uint8_t *udpPayload, int len)
 
 
 int8_t lf=0; // nombre de retour à la ligne
-int16_t i=UDP_DATA_P;
+int16_t i=UDP_DATA_P; //position du premier octet de date (depend du type de carte: presence ou non de l'entete du datagramme de 42 octets)
 int16_t first_cmnd=0;//position de la premiere commande
 int8_t t=0; //pour decomposition target
 // int8_t cmnd=0; //compteur nombre de commande

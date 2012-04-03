@@ -102,8 +102,6 @@ int Switch::update(byte _new_level)
         if (R_TEMP!=R_HIGH && !R_ON){   // cas haut => bas, relachement du switch avant d'atteindre l'etat "on"
             if(timer_doublepulse>0){
                 W_DPULSE(true);  // info "appuie double pulse" pour un cycle
-                //~ switch_status(TRIG, name, "dpulse"); // envoi vers exterieur (xpl...)
-                //~ switch_status_xpl(_id, TRIG);
                 return_value=ADDR_DPULSE;
                 timer_doublepulse=0;
                 #ifdef switch_lib_debug
@@ -114,8 +112,6 @@ int Switch::update(byte _new_level)
             }else{
                 W_PULSE(true);  // info "appuie pulse" pour un cycle
                 timer_doublepulse=maintained_delay; // sur detection d'un pulse, on lance le timer doublepulse: si un nouveau pulse est detecté avant la fin du décompteur, ce sera un double pulse
-                //~ switch_status(TRIG, name, "pulse"); // envoi vers exterieur (xpl...)
-                //~ switch_status_xpl(_id, TRIG);
                 return_value=ADDR_PULSE;
                 #ifdef switch_lib_debug
                 Serial.print("B#pulse-");
@@ -126,8 +122,6 @@ int Switch::update(byte _new_level)
         }
         else if (R_TEMP!=R_HIGH && R_ON){ // cas haut => bas, relachement du switch suite etat "on"
             W_ON_OSF(true);  // Front montant switch released
-            //~ switch_status(TRIG, name, "off"); // envoi vers xpl
-            //~ switch_status_xpl(_id, TRIG);
             return_value=ADDR_ON_OSF;
             #ifdef switch_lib_debug
             Serial.print("B#off-");
@@ -150,8 +144,6 @@ int Switch::update(byte _new_level)
                 W_ON(true);     // info "appuie maintenu" jusqu'au relachement du switch
                 W_ON_OSR(true); // info "mode maintenu" un seul cycle
 
-                //~ switch_status(TRIG, name, "on"); // envoi vers xpl
-                //~ switch_status_xpl(_id, TRIG);
                 return_value=ADDR_ON_OSR;
                 #ifdef switch_lib_debug
                 Serial.print("B#on-");

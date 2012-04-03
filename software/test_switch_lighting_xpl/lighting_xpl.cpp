@@ -161,6 +161,8 @@ int16_t lighting_basic(uint8_t *udpPayload, int16_t first_cmnd){
 #define DEVICE      1
 #define LEVEL       2
 #define FADE        3
+#define TOGGLE      4
+#define LAST        5
 
 int8_t cmnd=0; //donnees temporaire pour la recherche des commandes
 
@@ -191,6 +193,17 @@ while(udpPayload[i]!='}'){
 			if(udpPayload[i]==LF ){i++;}else{return i;}
 			bitSet(cmnd,GOTO);
 			// Serial.println("GOTO");
+		}
+        else if(udpPayload[i]=='t'){
+			i++;
+			if(udpPayload[i]=='o'){i++;}else{return i;}
+			if(udpPayload[i]=='g'){i++;}else{return i;}
+			if(udpPayload[i]=='g'){i++;}else{return i;}
+			if(udpPayload[i]=='l'){i++;}else{return i;}
+			if(udpPayload[i]=='e'){i++;}else{return i;}
+			if(udpPayload[i]==LF ){i++;}else{return i;}
+			bitSet(cmnd,TOGGLE);
+			// Serial.println("TOGGLE");
 		}
 		else{return i;}	
 	}
@@ -223,6 +236,16 @@ while(udpPayload[i]!='}'){
 		if(udpPayload[i]=='e'){i++;}else{return i;}
 		if(udpPayload[i]=='l'){i++;}else{return i;}
 		if(udpPayload[i]=='='){i++;}else{return i;}
+        if(udpPayload[i]=='l'){
+			i++;
+			if(udpPayload[i]=='a'){i++;}else{return i;}
+			if(udpPayload[i]=='s'){i++;}else{return i;}
+			if(udpPayload[i]=='t'){i++;}else{return i;}
+			if(udpPayload[i]==LF ){i++;}else{return i;}
+			bitSet(cmnd,LAST);
+			// Serial.println("LAST");
+		}
+        else{
 		memset(temp, 0, sizeof(temp));
 		int j=0;
 		while(udpPayload[i]!=LF){
@@ -236,6 +259,7 @@ while(udpPayload[i]!='}'){
 		// while(udpPayload[i]!=LF){i++;}//on ignore le contenu du level pour le moment
 		//stocker dans une variable intermediaire et convertir en type entier
 		sscanf(temp, "%d", &int_level);
+        }
 		bitSet(cmnd,LEVEL);
 		// Serial.println("LEVEL");
 	}
@@ -270,8 +294,9 @@ while(udpPayload[i]!='}'){
 	//mettre le tout dans une boucle pour scanner l'ensemble des commandes
 		
 	}
+
 	//verification que commande goto, device et level sont present. Fade-rate est en option.
-	if(bitRead(cmnd,GOTO) && bitRead(cmnd,DEVICE) && bitRead(cmnd,LEVEL)){
+	if((bitRead(cmnd,GOTO) || bitRead(cmnd,TOGGLE)) && bitRead(cmnd,DEVICE) && bitRead(cmnd,LEVEL)){
 	
 		///ici, on dispose du nom du device, du level et du fade-rate. Il faut donc executer l'action voulu: trouver le device dans la liste, et changer sa consigne
 	
@@ -280,18 +305,33 @@ while(udpPayload[i]!='}'){
 		if(position>=0)
 		{
 			// commande toggle
-			if(int_level<0){
-				LIGHTING[position].toggle(0, 100, int_fade, 0);
-				//~ Serial.print("set toggle command to level ");
-				//~ Serial.println(int_level);
+			if(bitRead(cmnd,TOGGLE)){
+                Serial.print(device);
+				Serial.print(" -> set toggle command to ");
+                if(bitRead(cmnd,LAST)){
+				LIGHTING[position].toggle(0, 255, int_fade, 0);
+				Serial.println("last");
+                }else{
+				LIGHTING[position].toggle(0, int_level, int_fade, 0);
+				Serial.println(int_level);
+                }
+
 			}
 			else
 			// commande classique
-			{
-				LIGHTING[position].new_setpoint(int_level, int_fade);
-				Serial.print(device);
-				Serial.print(" to ");
-				Serial.println(int_level);
+            {
+                LIGHTING[position].new_setpoint(int_level, int_fade);
+                Serial.print(device);
+                Serial.print(" -> new_sp command to ");
+                
+                if(bitRead(cmnd,LAST)){
+                    LIGHTING[position].new_setpoint(255, int_fade);
+                    Serial.println("last");
+                }else{
+                    LIGHTING[position].new_setpoint(int_level, int_fade);
+                    Serial.println(int_level);
+                }
+
 
 			}
 
@@ -323,7 +363,7 @@ const prog_uint8_t string_xpltrig[] PROGMEM = {"xpl-trig\n\0"};
 const prog_uint8_t string_xplstat[] PROGMEM = {"xpl-stat\n\0"};
 const prog_uint8_t string_xplcmnd[] PROGMEM = {"xpl-cmnd\n\0"};
 /// à remplacer gromain par xplduino
-const prog_uint8_t string_stat_source[] PROGMEM = {"{\nhop=1\nsource=gromain-lighting.\0"};
+const prog_uint8_t string_stat_source[] PROGMEM = {"{\nhop=1\nsource=xplduino-lighting.\0"};
 const prog_uint8_t string_stat_target[] PROGMEM = {"\ntarget=*\n}\nlighting.device\n{\ndevice=\0"};
 const prog_uint8_t string_stat_level[] PROGMEM = {"\nlevel=\0"};
 const prog_uint8_t string_stat_end[] PROGMEM = {"\n}\n\0"};

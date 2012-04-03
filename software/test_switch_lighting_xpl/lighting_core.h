@@ -60,6 +60,7 @@ class Lighting
     int new_setpoint(byte _new_setpoint, byte _fade);	// force une nouvelle consigne sans tenir compte de la current actuelle
     int toggle(byte _mini, byte _maxi, byte _fade, int _timer);	// bascule la sortie sur une nouvelle current mini ou maxi en fonction de la current actuelle
     int extinction_light(boolean _pulse);
+    int stop(void);
 
 
 };

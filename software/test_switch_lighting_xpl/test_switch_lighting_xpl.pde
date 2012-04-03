@@ -21,7 +21,7 @@
 #include "MemoryFree.h"
 
 /// à remplacer gromain par xplduino
-char vendor_id[8+2]={"gromain\0"};		// vendor id
+char vendor_id[8+2]={"xplduino\0"};		// vendor id
 char device_id[8+2]={"lighting\0"};		// device id
 char instance_id[18+1]={"garage\0"};	// instance id
 
