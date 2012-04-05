@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  01/04/2012 14:12:56
+# EESchema Netlist Version 1.1 created  04/04/2012 21:46:16
 (
  ( /4F455909 SM0805 C101 100pF
   ( 1 +5V )
@@ -36,35 +36,35 @@
   ( 1 N-000044 )
   ( 2 +12V )
  )
- ( /4F780532 $noname$ D109 LED
+ ( /4F780532 LED-3MM D109 LED
   ( 1 N-000025 )
   ( 2 N-000026 )
  )
- ( /4F78052F $noname$ D110 LED
+ ( /4F78052F LED-3MM D110 LED
   ( 1 N-000020 )
   ( 2 N-000019 )
  )
- ( /4F78051D $noname$ D111 LED
+ ( /4F78051D LED-3MM D111 LED
   ( 1 N-000029 )
   ( 2 N-000028 )
  )
- ( /4F780520 $noname$ D112 LED
+ ( /4F780520 LED-3MM D112 LED
   ( 1 N-000034 )
   ( 2 N-000030 )
  )
- ( /4F780529 $noname$ D113 LED
+ ( /4F780529 LED-3MM D113 LED
   ( 1 N-000032 )
   ( 2 N-000024 )
  )
- ( /4F78050D $noname$ D114 LED
+ ( /4F78050D LED-3MM D114 LED
   ( 1 N-000007 )
   ( 2 N-000008 )
  )
- ( /4F780502 $noname$ D115 LED
+ ( /4F780502 LED-3MM D115 LED
   ( 1 N-000010 )
   ( 2 N-000009 )
  )
- ( /4F78046A $noname$ D116 LED
+ ( /4F78046A LED-3MM D116 LED
   ( 1 N-000004 )
   ( 2 N-000006 )
  )
