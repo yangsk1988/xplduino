@@ -1,194 +1,92 @@
-# EESchema Netlist Version 1.1 created  sam. 07 avril 2012 21:55:12 CEST
+# EESchema Netlist Version 1.1 created  dim. 08 avril 2012 18:17:25 CEST
 (
  ( /4F800E84 LED-3MM D1 LED
-  ( 1 N-000033 )
-  ( 2 N-000032 )
+  ( 1 N-000066 )
+  ( 2 N-000065 )
  )
  ( /4F808D0E LED-3MM D2 LED
-  ( 1 N-000049 )
-  ( 2 N-000051 )
- )
- ( /4F808EDA LED-3MM D3 LED
-  ( 1 N-000011 )
-  ( 2 N-000013 )
- )
- ( /4F808EFF LED-3MM D4 LED
-  ( 1 N-000055 )
-  ( 2 N-000056 )
- )
- ( /4F808ED2 LED-3MM D5 LED
-  ( 1 N-000046 )
+  ( 1 N-000044 )
   ( 2 N-000045 )
  )
+ ( /4F808EDA LED-3MM D3 LED
+  ( 1 N-000081 )
+  ( 2 N-000082 )
+ )
+ ( /4F808ED2 LED-3MM D4 LED
+  ( 1 N-000050 )
+  ( 2 N-000047 )
+ )
+ ( /4F808EFF LED-3MM D5 LED
+  ( 1 N-000010 )
+  ( 2 N-000011 )
+ )
  ( /4F808EF7 LED-3MM D6 LED
-  ( 1 N-000023 )
-  ( 2 N-000022 )
+  ( 1 N-000074 )
+  ( 2 N-000075 )
  )
  ( /4F808EE8 LED-3MM D7 LED
-  ( 1 N-000008 )
-  ( 2 N-000007 )
+  ( 1 N-000086 )
+  ( 2 N-000085 )
  )
  ( /4F808EF0 LED-3MM D8 LED
-  ( 1 N-000027 )
-  ( 2 N-000029 )
+  ( 1 N-000072 )
+  ( 2 N-000073 )
+ )
+ ( /4F815E0C LED-3MM D9 LED
+  ( 1 N-000095 )
+  ( 2 N-000096 )
+ )
+ ( /4F815E02 LED-3MM D10 LED
+  ( 1 N-000118 )
+  ( 2 N-000116 )
+ )
+ ( /4F815DF3 LED-3MM D11 LED
+  ( 1 N-000021 )
+  ( 2 N-000020 )
+ )
+ ( /4F815DFB LED-3MM D12 LED
+  ( 1 N-000088 )
+  ( 2 N-000089 )
+ )
+ ( /4F815DD5 LED-3MM D13 LED
+  ( 1 N-000004 )
+  ( 2 N-000002 )
+ )
+ ( /4F815DDD LED-3MM D14 LED
+  ( 1 N-000038 )
+  ( 2 N-000028 )
+ )
+ ( /4F815DEC LED-3MM D15 LED
+  ( 1 N-000025 )
+  ( 2 N-000016 )
+ )
+ ( /4F815DE4 LED-3MM D16 LED
+  ( 1 N-000032 )
+  ( 2 N-000030 )
  )
  ( /4F8099E7 PIN_ARRAY_3X1 K_CMND1 CONN_3
-  ( 1 /SH1 )
-  ( 2 /CLK1 )
+  ( 1 /SH )
+  ( 2 /CLK )
   ( 3 /OUT1 )
  )
+ ( /4F815DCE PIN_ARRAY_3X1 K_CMND2 CONN_3
+  ( 1 /SH )
+  ( 2 /CLK )
+  ( 3 /IN2 )
+ )
  ( /4F809A04 PIN_ARRAY_3X1 K_SUPPLY1 CONN_3
-  ( 1 VCC )
+  ( 1 +5V )
   ( 2 GND )
   ( 3 +12V )
  )
- ( /4F800B32 DIP-6__300_ELL OK1 CNY17
-  ( 1 N-000054 )
-  ( 2 N-000033 )
-  ( 3 ? )
-  ( 4 GND )
-  ( 5 /CMD0 )
-  ( 6 ? )
- )
- ( /4F808D11 DIP-6__300_ELL OK2 CNY17
-  ( 1 N-000048 )
-  ( 2 N-000049 )
-  ( 3 ? )
-  ( 4 GND )
-  ( 5 /CMD1 )
-  ( 6 ? )
- )
- ( /4F808EDD DIP-6__300_ELL OK3 CNY17
-  ( 1 N-000002 )
-  ( 2 N-000011 )
-  ( 3 ? )
-  ( 4 GND )
-  ( 5 /CMD2 )
-  ( 6 ? )
- )
- ( /4F808F02 DIP-6__300_ELL OK4 CNY17
-  ( 1 N-000057 )
-  ( 2 N-000055 )
-  ( 3 ? )
-  ( 4 GND )
-  ( 5 /CMD4 )
-  ( 6 ? )
- )
- ( /4F808ECF DIP-6__300_ELL OK5 CNY17
-  ( 1 N-000043 )
-  ( 2 N-000046 )
-  ( 3 ? )
-  ( 4 GND )
-  ( 5 /CMD3 )
-  ( 6 ? )
- )
- ( /4F808EF4 DIP-6__300_ELL OK6 CNY17
-  ( 1 N-000021 )
-  ( 2 N-000023 )
-  ( 3 ? )
-  ( 4 GND )
-  ( 5 /CMD5 )
-  ( 6 ? )
- )
- ( /4F808EE5 DIP-6__300_ELL OK7 CNY17
-  ( 1 N-000026 )
-  ( 2 N-000008 )
-  ( 3 ? )
-  ( 4 GND )
-  ( 5 /CMD6 )
-  ( 6 ? )
- )
- ( /4F808EF3 DIP-6__300_ELL OK8 CNY17
-  ( 1 N-000025 )
-  ( 2 N-000027 )
-  ( 3 ? )
-  ( 4 GND )
-  ( 5 /CMD7 )
-  ( 6 ? )
- )
- ( /4F80580C MOL_CONN_2_V P1 CONN_2
-  ( 1 N-000054 )
-  ( 2 N-000048 )
- )
- ( /4F808ED6 MOL_CONN_2_V P2 CONN_2
-  ( 1 N-000002 )
-  ( 2 N-000043 )
- )
- ( /4F808EFB MOL_CONN_2_V P3 CONN_2
-  ( 1 N-000057 )
-  ( 2 N-000021 )
- )
- ( /4F808EEC MOL_CONN_2_V P4 CONN_2
-  ( 1 N-000026 )
-  ( 2 N-000025 )
- )
- ( /4F800D59 SM1206 R1 R
-  ( 1 N-000032 )
+ ( /4F81B210 PIN_ARRAY_3X1 K_SUPPLY2 CONN_3
+  ( 1 +5V )
   ( 2 GND )
+  ( 3 +12V )
  )
- ( /4F808D10 SM1206 R2 R
-  ( 1 N-000051 )
-  ( 2 GND )
- )
- ( /4F808EDC SM1206 R3 R
-  ( 1 N-000013 )
-  ( 2 GND )
- )
- ( /4F808F01 SM1206 R4 R
-  ( 1 N-000056 )
-  ( 2 GND )
- )
- ( /4F808ED0 SM1206 R5 R
-  ( 1 N-000045 )
-  ( 2 GND )
- )
- ( /4F808EF5 SM1206 R6 R
-  ( 1 N-000022 )
-  ( 2 GND )
- )
- ( /4F808EE6 SM1206 R7 R
-  ( 1 N-000007 )
-  ( 2 GND )
- )
- ( /4F808EF2 SM1206 R8 R
-  ( 1 N-000029 )
-  ( 2 GND )
- )
- ( /4F800D64 SM1206 R9 R
-  ( 1 VCC )
-  ( 2 /CMD0 )
- )
- ( /4F808D0F SM1206 R10 R
-  ( 1 VCC )
-  ( 2 /CMD1 )
- )
- ( /4F808EDB SM1206 R11 R
-  ( 1 VCC )
-  ( 2 /CMD2 )
- )
- ( /4F808F00 SM1206 R12 R
-  ( 1 VCC )
-  ( 2 /CMD4 )
- )
- ( /4F808ED1 SM1206 R13 R
-  ( 1 VCC )
-  ( 2 /CMD3 )
- )
- ( /4F808EF6 SM1206 R14 R
-  ( 1 VCC )
-  ( 2 /CMD5 )
- )
- ( /4F808EE7 SM1206 R15 R
-  ( 1 VCC )
-  ( 2 /CMD6 )
- )
- ( /4F808EF1 SM1206 R16 R
-  ( 1 VCC )
-  ( 2 /CMD7 )
- )
- ( /4F8009A1 SO16E U1 74LS165
-  ( 1 /SH1 )
-  ( 2 /CLK1 )
+ ( /4F8009A1 SO16E MUX1 74HC165
+  ( 1 /SH )
+  ( 2 /CLK )
   ( 3 /CMD4 )
   ( 4 /CMD5 )
   ( 5 /CMD6 )
@@ -196,13 +94,319 @@
   ( 7 ? )
   ( 8 GND )
   ( 9 /OUT1 )
-  ( 10 ? )
+  ( 10 /OUT2 )
   ( 11 /CMD0 )
   ( 12 /CMD1 )
   ( 13 /CMD2 )
-  ( 14 /CMD3 )
+  ( 14 ? )
   ( 15 GND )
   ( 16 VCC )
+ )
+ ( /4F815E10 SO16E MUX2 74HC165
+  ( 1 /SH )
+  ( 2 /CLK )
+  ( 3 /CMD12 )
+  ( 4 /CMD13 )
+  ( 5 /CMD14 )
+  ( 6 /CMD15 )
+  ( 7 ? )
+  ( 8 GND )
+  ( 9 /OUT2 )
+  ( 10 /IN2 )
+  ( 11 /CMD8 )
+  ( 12 /CMD9 )
+  ( 13 /CMD10 )
+  ( 14 /CMD11 )
+  ( 15 GND )
+  ( 16 VCC )
+ )
+ ( /4F800B32 DIP-6__300_ELL OK1 CNY17
+  ( 1 N-000090 )
+  ( 2 N-000066 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD0 )
+  ( 6 ? )
+ )
+ ( /4F808D11 DIP-6__300_ELL OK2 CNY17
+  ( 1 N-000063 )
+  ( 2 N-000044 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD1 )
+  ( 6 ? )
+ )
+ ( /4F808EDD DIP-6__300_ELL OK3 CNY17
+  ( 1 N-000091 )
+  ( 2 N-000081 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD2 )
+  ( 6 ? )
+ )
+ ( /4F808ECF DIP-6__300_ELL OK4 CNY17
+  ( 1 N-000049 )
+  ( 2 N-000050 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 N-000046 )
+  ( 6 ? )
+ )
+ ( /4F808F02 DIP-6__300_ELL OK5 CNY17
+  ( 1 /IN4 )
+  ( 2 N-000010 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD4 )
+  ( 6 ? )
+ )
+ ( /4F808EF4 DIP-6__300_ELL OK6 CNY17
+  ( 1 /IN5 )
+  ( 2 N-000074 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD5 )
+  ( 6 ? )
+ )
+ ( /4F808EE5 DIP-6__300_ELL OK7 CNY17
+  ( 1 /IN6 )
+  ( 2 N-000086 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD6 )
+  ( 6 ? )
+ )
+ ( /4F808EF3 DIP-6__300_ELL OK8 CNY17
+  ( 1 /IN7 )
+  ( 2 N-000072 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD7 )
+  ( 6 ? )
+ )
+ ( /4F815E0F DIP-6__300_ELL OK9 CNY17
+  ( 1 N-000092 )
+  ( 2 N-000095 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD8 )
+  ( 6 ? )
+ )
+ ( /4F815DFF DIP-6__300_ELL OK10 CNY17
+  ( 1 N-000117 )
+  ( 2 N-000118 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD9 )
+  ( 6 ? )
+ )
+ ( /4F815DF0 DIP-6__300_ELL OK11 CNY17
+  ( 1 N-000087 )
+  ( 2 N-000021 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD10 )
+  ( 6 ? )
+ )
+ ( /4F815DFE DIP-6__300_ELL OK12 CNY17
+  ( 1 N-000114 )
+  ( 2 N-000088 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD11 )
+  ( 6 ? )
+ )
+ ( /4F815DD2 DIP-6__300_ELL OK13 CNY17
+  ( 1 N-000003 )
+  ( 2 N-000004 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD12 )
+  ( 6 ? )
+ )
+ ( /4F815DE0 DIP-6__300_ELL OK14 CNY17
+  ( 1 N-000037 )
+  ( 2 N-000038 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD13 )
+  ( 6 ? )
+ )
+ ( /4F815DEF DIP-6__300_ELL OK15 CNY17
+  ( 1 N-000024 )
+  ( 2 N-000025 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD14 )
+  ( 6 ? )
+ )
+ ( /4F815DE1 DIP-6__300_ELL OK16 CNY17
+  ( 1 N-000031 )
+  ( 2 N-000032 )
+  ( 3 ? )
+  ( 4 GND )
+  ( 5 /CMD15 )
+  ( 6 ? )
+ )
+ ( /4F80580C MOL_CONN_2_V P1 CONN_2
+  ( 1 N-000090 )
+  ( 2 N-000063 )
+ )
+ ( /4F808ED6 MOL_CONN_2_V P2 CONN_2
+  ( 1 N-000091 )
+  ( 2 N-000049 )
+ )
+ ( /4F808EFB MOL_CONN_2_V P3 CONN_2
+  ( 1 /IN4 )
+  ( 2 /IN5 )
+ )
+ ( /4F808EEC MOL_CONN_2_V P4 CONN_2
+  ( 1 /IN6 )
+  ( 2 /IN7 )
+ )
+ ( /4F815E06 MOL_CONN_2_V P5 CONN_2
+  ( 1 N-000092 )
+  ( 2 N-000117 )
+ )
+ ( /4F815DF7 MOL_CONN_2_V P6 CONN_2
+  ( 1 N-000087 )
+  ( 2 N-000114 )
+ )
+ ( /4F815DD9 MOL_CONN_2_V P7 CONN_2
+  ( 1 N-000003 )
+  ( 2 N-000037 )
+ )
+ ( /4F815DE8 MOL_CONN_2_V P8 CONN_2
+  ( 1 N-000024 )
+  ( 2 N-000031 )
+ )
+ ( /4F800D59 SM1206 R1 R
+  ( 1 N-000065 )
+  ( 2 GND )
+ )
+ ( /4F808D10 SM1206 R2 R
+  ( 1 N-000045 )
+  ( 2 GND )
+ )
+ ( /4F808EDC SM1206 R3 R
+  ( 1 N-000082 )
+  ( 2 GND )
+ )
+ ( /4F808ED0 SM1206 R4 R
+  ( 1 N-000047 )
+  ( 2 ? )
+ )
+ ( /4F808F01 SM1206 R5 R
+  ( 1 N-000011 )
+  ( 2 GND )
+ )
+ ( /4F808EF5 SM1206 R6 R
+  ( 1 N-000075 )
+  ( 2 GND )
+ )
+ ( /4F808EE6 SM1206 R7 R
+  ( 1 N-000085 )
+  ( 2 GND )
+ )
+ ( /4F808EF2 SM1206 R8 R
+  ( 1 N-000073 )
+  ( 2 GND )
+ )
+ ( /4F800D64 SM1206 R9 R
+  ( 1 +5V )
+  ( 2 /CMD0 )
+ )
+ ( /4F808D0F SM1206 R10 R
+  ( 1 +5V )
+  ( 2 /CMD1 )
+ )
+ ( /4F808EDB SM1206 R11 R
+  ( 1 +5V )
+  ( 2 /CMD2 )
+ )
+ ( /4F808ED1 SM1206 R12 R
+  ( 1 +5V )
+  ( 2 N-000046 )
+ )
+ ( /4F808F00 SM1206 R13 R
+  ( 1 +5V )
+  ( 2 /CMD4 )
+ )
+ ( /4F808EF6 SM1206 R14 R
+  ( 1 +5V )
+  ( 2 /CMD5 )
+ )
+ ( /4F808EE7 SM1206 R15 R
+  ( 1 +5V )
+  ( 2 /CMD6 )
+ )
+ ( /4F808EF1 SM1206 R16 R
+  ( 1 +5V )
+  ( 2 /CMD7 )
+ )
+ ( /4F815E0E SM1206 R17 R
+  ( 1 N-000096 )
+  ( 2 GND )
+ )
+ ( /4F815E00 SM1206 R18 R
+  ( 1 N-000116 )
+  ( 2 GND )
+ )
+ ( /4F815DF1 SM1206 R19 R
+  ( 1 N-000020 )
+  ( 2 GND )
+ )
+ ( /4F815DFD SM1206 R20 R
+  ( 1 N-000089 )
+  ( 2 GND )
+ )
+ ( /4F815DD3 SM1206 R21 R
+  ( 1 N-000002 )
+  ( 2 GND )
+ )
+ ( /4F815DDF SM1206 R22 R
+  ( 1 N-000028 )
+  ( 2 GND )
+ )
+ ( /4F815DEE SM1206 R23 R
+  ( 1 N-000016 )
+  ( 2 GND )
+ )
+ ( /4F815DE2 SM1206 R24 R
+  ( 1 N-000030 )
+  ( 2 GND )
+ )
+ ( /4F815E0D SM1206 R25 R
+  ( 1 +5V )
+  ( 2 /CMD8 )
+ )
+ ( /4F815E01 SM1206 R26 R
+  ( 1 ? )
+  ( 2 /CMD9 )
+ )
+ ( /4F815DF2 SM1206 R27 R
+  ( 1 ? )
+  ( 2 /CMD10 )
+ )
+ ( /4F815DFC SM1206 R28 R
+  ( 1 +5V )
+  ( 2 /CMD11 )
+ )
+ ( /4F815DD4 SM1206 R29 R
+  ( 1 +5V )
+  ( 2 /CMD12 )
+ )
+ ( /4F815DDE SM1206 R30 R
+  ( 1 +5V )
+  ( 2 /CMD13 )
+ )
+ ( /4F815DED SM1206 R31 R
+  ( 1 +5V )
+  ( 2 /CMD14 )
+ )
+ ( /4F815DE3 SM1206 R32 R
+  ( 1 +5V )
+  ( 2 /CMD15 )
  )
 )
 *
@@ -271,6 +475,78 @@ $component D7
  LEDV
 $endlist
 $component D8
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D9
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D10
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D11
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D12
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D13
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D14
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D15
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component D16
  LED-3MM
  LED-5MM
  LED-10MM
@@ -385,6 +661,118 @@ $component R15
  SM1206
 $endlist
 $component R16
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R17
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R18
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R19
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R20
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R21
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R22
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R23
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R24
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R25
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R26
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R27
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R28
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R29
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R30
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R31
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R32
  R?
  SM0603
  SM0805
