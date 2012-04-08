@@ -1,6 +1,6 @@
-update=sam. 07 avril 2012 17:16:34 CEST
+update=dim. 08 avril 2012 18:46:31 CEST
 version=1
-last_client=cvpcb
+last_client=pcbnew
 [general]
 version=1
 [eeschema]
@@ -66,6 +66,11 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=akm
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [pcbnew]
 version=1
 PadDrlX=320
@@ -84,6 +89,7 @@ TxtLar=120
 MSegLar=150
 LastNetListRead=16_DI_MUX.net
 [pcbnew/libraries]
+LibDir=
 LibName1=sockets
 LibName2=connect
 LibName3=discret
@@ -101,10 +107,4 @@ LibName14=smd_capacitors
 LibName15=smd_dil
 LibName16=smd_resistors
 LibName17=smd_transistors
-LibName18=molex_2
-LibDir=
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
+LibName18=components/molex_2
