@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  dim. 08 avril 2012 22:36:06 CEST
+# EESchema Netlist Version 1.1 created  lun. 09 avril 2012 20:39:06 CEST
 (
  ( /4F81B210 $noname  K_SUPPLY2 CONN_3 {Lib=CONN_3}
   (    1 +5V )
@@ -44,8 +44,8 @@
   (    2 N-000087 )
  )
  ( /4F815E06 $noname  P5 CONN_2 {Lib=CONN_2}
-  (    1 /IN8 )
-  (    2 /IN9 )
+  (    1 /IN9 )
+  (    2 /IN8 )
  )
  ( /4F815E02 $noname  D10 LED {Lib=LED}
   (    1 N-000104 )
@@ -88,8 +88,8 @@
   (    2 N-000078 )
  )
  ( /4F815DF7 $noname  P6 CONN_2 {Lib=CONN_2}
-  (    1 /IN10 )
-  (    2 /IN11 )
+  (    1 /IN11 )
+  (    2 /IN10 )
  )
  ( /4F815DF3 $noname  D11 LED {Lib=LED}
   (    1 N-000019 )
@@ -132,8 +132,8 @@
   (    2 N-000016 )
  )
  ( /4F815DE8 $noname  P8 CONN_2 {Lib=CONN_2}
-  (    1 /IN14 )
-  (    2 /IN15 )
+  (    1 /IN15 )
+  (    2 /IN14 )
  )
  ( /4F815DE4 $noname  D16 LED {Lib=LED}
   (    1 N-000029 )
@@ -176,8 +176,8 @@
   (    2 N-000025 )
  )
  ( /4F815DD9 $noname  P7 CONN_2 {Lib=CONN_2}
-  (    1 /IN12 )
-  (    2 /IN13 )
+  (    1 /IN13 )
+  (    2 /IN12 )
  )
  ( /4F815DD5 $noname  D13 LED {Lib=LED}
   (    1 N-000003 )
@@ -235,8 +235,8 @@
   (    2 N-000063 )
  )
  ( /4F808EFB $noname  P3 CONN_2 {Lib=CONN_2}
-  (    1 /IN4 )
-  (    2 /IN5 )
+  (    1 /IN5 )
+  (    2 /IN4 )
  )
  ( /4F808EF7 $noname  D6 LED {Lib=LED}
   (    1 N-000065 )
@@ -279,8 +279,8 @@
   (    2 N-000062 )
  )
  ( /4F808EEC $noname  P4 CONN_2 {Lib=CONN_2}
-  (    1 /IN6 )
-  (    2 /IN7 )
+  (    1 /IN7 )
+  (    2 /IN6 )
  )
  ( /4F808EE8 $noname  D7 LED {Lib=LED}
   (    1 N-000075 )
@@ -323,8 +323,8 @@
   (    2 N-000072 )
  )
  ( /4F808ED6 $noname  P2 CONN_2 {Lib=CONN_2}
-  (    1 /IN2 )
-  (    2 /IN3 )
+  (    1 /IN3 )
+  (    2 /IN2 )
  )
  ( /4F808ED2 $noname  D4 LED {Lib=LED}
   (    1 N-000040 )
@@ -367,8 +367,8 @@
   (    2 N-000037 )
  )
  ( /4F80580C $noname  P1 CONN_2 {Lib=CONN_2}
-  (    1 /IN0 )
-  (    2 /IN1 )
+  (    1 /IN1 )
+  (    2 /IN0 )
  )
  ( /4F800E84 $noname  D1 LED {Lib=LED}
   (    1 N-000055 )
@@ -829,7 +829,7 @@ Net 3 "" ""
  OK13 2
 Net 6 "/IN4" "IN4"
  OK5 1
- P3 1
+ P3 2
 Net 9 "" ""
  OK5 2
  D5 1
@@ -840,7 +840,7 @@ Net 11 "/OUT1" "OUT1"
  MUX1 9
  K_CMND1 3
 Net 12 "/IN14" "IN14"
- P8 1
+ P8 2
  OK15 1
 Net 15 "" ""
  D15 1
@@ -849,35 +849,35 @@ Net 16 "" ""
  R23 1
  D15 2
 Net 17 "/IN10" "IN10"
- P6 1
+ P6 2
  OK11 1
 Net 18 "" ""
- D11 2
  R19 1
+ D11 2
 Net 19 "" ""
  OK11 2
  D11 1
 Net 24 "" ""
- OK14 2
  D14 1
+ OK14 2
 Net 25 "" ""
  R22 1
  D14 2
 Net 26 "/IN12" "IN12"
- P7 1
  OK13 1
+ P7 2
 Net 27 "" ""
- D16 2
  R24 1
+ D16 2
 Net 28 "/IN15" "IN15"
- P8 2
+ P8 1
  OK16 1
 Net 29 "" ""
- D16 1
  OK16 2
+ D16 1
 Net 32 "/IN13" "IN13"
- P7 2
  OK14 1
+ P7 1
 Net 36 "" ""
  D2 1
  OK2 2
@@ -888,49 +888,49 @@ Net 38 "" ""
  R4 1
  D4 2
 Net 39 "/IN3" "IN3"
+ P2 1
  OK4 1
- P2 2
 Net 40 "" ""
- OK4 2
  D4 1
+ OK4 2
 Net 43 "/CMD4" "CMD4"
- OK5 5
- R13 2
  MUX1 3
+ R13 2
+ OK5 5
 Net 44 "/CMD5" "CMD5"
- OK6 5
  MUX1 4
  R14 2
+ OK6 5
 Net 45 "/CMD6" "CMD6"
- MUX1 5
  R15 2
+ MUX1 5
  OK7 5
 Net 46 "/CMD7" "CMD7"
+ R16 2
  OK8 5
  MUX1 6
- R16 2
 Net 48 "/CMD0" "CMD0"
- MUX1 11
  OK1 5
  R9 2
+ MUX1 11
 Net 49 "/CMD1" "CMD1"
+ MUX1 12
  R10 2
  OK2 5
- MUX1 12
 Net 50 "/CMD2" "CMD2"
- MUX1 13
- OK3 5
  R11 2
+ OK3 5
+ MUX1 13
 Net 51 "/CMD3" "CMD3"
  R12 2
  MUX1 14
  OK4 5
-Net 52 "/IN0" "IN0"
- OK1 1
+Net 52 "/IN1" "IN1"
  P1 1
-Net 53 "/IN1" "IN1"
- P1 2
  OK2 1
+Net 53 "/IN0" "IN0"
+ P1 2
+ OK1 1
 Net 54 "" ""
  D1 2
  R1 1
@@ -938,35 +938,35 @@ Net 55 "" ""
  D1 1
  OK1 2
 Net 61 "" ""
- OK8 2
  D8 1
+ OK8 2
 Net 62 "" ""
  R8 1
  D8 2
 Net 63 "" ""
- D5 2
  R5 1
+ D5 2
 Net 64 "/IN5" "IN5"
+ P3 1
  OK6 1
- P3 2
 Net 65 "" ""
  D6 1
  OK6 2
 Net 66 "" ""
- R6 1
  D6 2
+ R6 1
 Net 71 "" ""
  OK3 2
  D3 1
 Net 72 "" ""
- D3 2
  R3 1
-Net 73 "/IN6" "IN6"
- OK7 1
- P4 1
-Net 74 "/IN7" "IN7"
- P4 2
+ D3 2
+Net 73 "/IN7" "IN7"
  OK8 1
+ P4 1
+Net 74 "/IN6" "IN6"
+ OK7 1
+ P4 2
 Net 75 "" ""
  D7 1
  OK7 2
@@ -980,39 +980,39 @@ Net 78 "" ""
  D12 2
  R20 1
 Net 79 "/IN2" "IN2"
+ P2 2
  OK3 1
- P2 1
 Net 80 "/CMD9" "CMD9"
  R26 2
  OK10 5
  MUX2 12
 Net 81 "/CMD10" "CMD10"
  MUX2 13
- OK11 5
  R27 2
+ OK11 5
 Net 82 "/CMD11" "CMD11"
+ R28 2
  MUX2 14
  OK12 5
- R28 2
 Net 83 "/IN8" "IN8"
  OK9 1
- P5 1
+ P5 2
 Net 86 "" ""
- D9 1
  OK9 2
+ D9 1
 Net 87 "" ""
  R17 1
  D9 2
 Net 88 "/SH" "SH"
- MUX2 1
+ MUX1 1
  K_CMND1 1
  K_CMND2 1
- MUX1 1
+ MUX2 1
 Net 89 "/CLK" "CLK"
- MUX1 2
- MUX2 2
- K_CMND2 2
  K_CMND1 2
+ K_CMND2 2
+ MUX2 2
+ MUX1 2
 Net 90 "/CMD12" "CMD12"
  MUX2 3
  R29 2
@@ -1040,13 +1040,13 @@ Net 97 "/CMD8" "CMD8"
  OK9 5
  MUX2 11
 Net 99 "/IN11" "IN11"
- P6 2
+ P6 1
  OK12 1
 Net 102 "" ""
  R18 1
  D10 2
 Net 103 "/IN9" "IN9"
- P5 2
+ P5 1
  OK10 1
 Net 104 "" ""
  OK10 2

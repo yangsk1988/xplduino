@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date dim. 08 avril 2012 22:32:15 CEST
+EESchema Schematic File Version 2  date dim. 08 avril 2012 22:35:56 CEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -1167,7 +1167,7 @@ CLK
 Text Label 13800 3650 2    60   ~ 0
 GND
 Text Label 13800 2450 2    60   ~ 0
-IN2
+DATA_IN
 Text Label 13800 3400 2    60   ~ 0
 SH
 $Comp
@@ -1191,7 +1191,7 @@ F 1 "CONN_3" V 14150 4150 40  0000 C CNN
 	-1   0    0    1   
 $EndComp
 Text Label 14450 4050 0    60   ~ 0
-IN2
+DATA_IN
 Text Label 14450 4150 0    60   ~ 0
 CLK
 Text Label 14450 4250 0    60   ~ 0

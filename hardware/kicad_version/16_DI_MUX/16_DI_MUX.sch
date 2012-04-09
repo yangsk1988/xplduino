@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date dim. 08 avril 2012 22:35:56 CEST
+EESchema Schematic File Version 2  date lun. 09 avril 2012 20:38:57 CEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 1 1
 Title "16 Digital Inputs Multiplexied Board"
-Date "8 apr 2012"
+Date "9 apr 2012"
 Rev "draft"
 Comp "XPLDUINO project"
 Comment1 ""
@@ -711,7 +711,7 @@ P 8650 2400
 F 0 "P5" V 8600 2400 40  0000 C CNN
 F 1 "CONN_2" V 8700 2400 40  0000 C CNN
 	1    8650 2400
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 Text Label 12350 2600 0    60   ~ 0
 CMD9
@@ -836,7 +836,7 @@ P 8650 4850
 F 0 "P6" V 8600 4850 40  0000 C CNN
 F 1 "CONN_2" V 8700 4850 40  0000 C CNN
 	1    8650 4850
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 Text Label 9000 4750 0    60   ~ 0
 IN10
@@ -961,7 +961,7 @@ P 8650 9650
 F 0 "P8" V 8600 9650 40  0000 C CNN
 F 1 "CONN_2" V 8700 9650 40  0000 C CNN
 	1    8650 9650
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 Text Label 12350 9850 0    60   ~ 0
 CMD15
@@ -1086,7 +1086,7 @@ P 8650 7250
 F 0 "P7" V 8600 7250 40  0000 C CNN
 F 1 "CONN_2" V 8700 7250 40  0000 C CNN
 	1    8650 7250
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 Text Label 9000 7150 0    60   ~ 0
 IN12
@@ -1356,7 +1356,7 @@ P 950 6900
 F 0 "P3" V 900 6900 40  0000 C CNN
 F 1 "CONN_2" V 1000 6900 40  0000 C CNN
 	1    950  6900
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 Text Label 4600 7100 0    60   ~ 0
 CMD5
@@ -1481,7 +1481,7 @@ P 950 9300
 F 0 "P4" V 900 9300 40  0000 C CNN
 F 1 "CONN_2" V 1000 9300 40  0000 C CNN
 	1    950  9300
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 Text Label 1300 9200 0    60   ~ 0
 IN6
@@ -1606,7 +1606,7 @@ P 950 4500
 F 0 "P2" V 900 4500 40  0000 C CNN
 F 1 "CONN_2" V 1000 4500 40  0000 C CNN
 	1    950  4500
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 Text Label 4600 4700 0    60   ~ 0
 CMD3
@@ -1731,7 +1731,7 @@ P 950 2100
 F 0 "P1" V 900 2100 40  0000 C CNN
 F 1 "CONN_2" V 1000 2100 40  0000 C CNN
 	1    950  2100
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 Text Label 1300 2000 0    60   ~ 0
 IN0
