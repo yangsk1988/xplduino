@@ -1,4 +1,4 @@
-update=01/04/2012 11:47:57
+update=09/04/2012 11:36:54
 version=1
 last_client=pcbnew
 [cvpcb]
@@ -78,9 +78,9 @@ LibName30=valves
 LibName31=g5la-1-12vdc
 [pcbnew]
 version=1
-PadDrlX=433
-PadDimH=630
-PadDimV=630
+PadDrlX=0
+PadDimH=335
+PadDimV=335
 BoardThickness=630
 TxtPcbV=800
 TxtPcbH=600
@@ -91,7 +91,7 @@ VEgarde=100
 DrawLar=150
 EdgeLar=150
 TxtLar=120
-MSegLar=150
+MSegLar=59
 LastNetListRead=
 [pcbnew/libraries]
 LibDir=components
@@ -106,3 +106,5 @@ LibName8=valves
 LibName9=led
 LibName10=dip_sockets
 LibName11=G5LA-1-12VDC
+LibName12=Molex_39531-0003
+LibName13=SOD123

@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 04/04/2012 21:46:16
+Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 09/04/2012 16:09:37
 
 BeginCmp
 TimeStamp = /4F455909;
@@ -11,140 +11,140 @@ BeginCmp
 TimeStamp = /4F612094;
 Reference = D101;
 ValeurCmp = DIODE;
-IdModule  = ;
+IdModule  = SOD123;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F61208A;
 Reference = D102;
 ValeurCmp = DIODE;
-IdModule  = ;
+IdModule  = SOD123;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F612082;
 Reference = D103;
 ValeurCmp = DIODE;
-IdModule  = ;
+IdModule  = SOD123;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F612078;
 Reference = D104;
 ValeurCmp = DIODE;
-IdModule  = ;
+IdModule  = SOD123;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F611FD8;
 Reference = D105;
 ValeurCmp = DIODE;
-IdModule  = ;
+IdModule  = SOD123;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F611FE3;
 Reference = D106;
 ValeurCmp = DIODE;
-IdModule  = ;
+IdModule  = SOD123;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F612015;
 Reference = D107;
 ValeurCmp = DIODE;
-IdModule  = ;
+IdModule  = SOD123;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F612014;
 Reference = D108;
 ValeurCmp = DIODE;
-IdModule  = ;
+IdModule  = SOD123;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F780532;
 Reference = D109;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F78052F;
 Reference = D110;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F78051D;
 Reference = D111;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F780520;
 Reference = D112;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F780529;
 Reference = D113;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F78050D;
 Reference = D114;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F780502;
 Reference = D115;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F78046A;
 Reference = D116;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F455CB8;
 Reference = K101;
 ValeurCmp = CONN_3;
-IdModule  = ;
+IdModule  = PIN_ARRAY_3X1;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F455B0A;
 Reference = K102;
 ValeurCmp = J_IN;
-IdModule  = ;
+IdModule  = PIN_ARRAY_3X1;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F455C8B;
 Reference = K103;
 ValeurCmp = CONN_3;
-IdModule  = ;
+IdModule  = PIN_ARRAY_3X1;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F455C15;
 Reference = K104;
 ValeurCmp = J_OUT;
-IdModule  = ;
+IdModule  = PIN_ARRAY_3X1;
 EndCmp
 
 BeginCmp
@@ -207,56 +207,56 @@ BeginCmp
 TimeStamp = /4F6118A3;
 Reference = K113;
 ValeurCmp = CONN_3;
-IdModule  = ;
+IdModule  = Molex_39531-0003;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F6118AA;
 Reference = K114;
 ValeurCmp = CONN_3;
-IdModule  = ;
+IdModule  = Molex_39531-0003;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F6118B1;
 Reference = K115;
 ValeurCmp = CONN_3;
-IdModule  = ;
+IdModule  = Molex_39531-0003;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F6118B8;
 Reference = K116;
 ValeurCmp = CONN_3;
-IdModule  = ;
+IdModule  = Molex_39531-0003;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F6118BF;
 Reference = K117;
 ValeurCmp = CONN_3;
-IdModule  = ;
+IdModule  = Molex_39531-0003;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F6118D8;
 Reference = K118;
 ValeurCmp = CONN_3;
-IdModule  = ;
+IdModule  = Molex_39531-0003;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F6118DF;
 Reference = K119;
 ValeurCmp = CONN_3;
-IdModule  = ;
+IdModule  = Molex_39531-0003;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F6118E9;
 Reference = K120;
 ValeurCmp = CONN_3;
-IdModule  = ;
+IdModule  = Molex_39531-0003;
 EndCmp
 
 BeginCmp
