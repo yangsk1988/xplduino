@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 09/04/2012 16:09:37
+Cmp-Mod V01 Created by CvPCB (2011-05-25)-stable date = jeu. 12 avril 2012 23:55:36 CEST
 
 BeginCmp
 TimeStamp = /4F455909;
@@ -257,6 +257,27 @@ TimeStamp = /4F6118E9;
 Reference = K120;
 ValeurCmp = CONN_3;
 IdModule  = Molex_39531-0003;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F874664;
+Reference = P1;
+ValeurCmp = CONN_10;
+IdModule  = PIN_ARRAY_5x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F874F09;
+Reference = P2;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F874F11;
+Reference = P3;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
 EndCmp
 
 BeginCmp

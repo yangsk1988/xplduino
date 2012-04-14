@@ -1,4 +1,4 @@
-update=09/04/2012 11:36:54
+update=jeu. 12 avril 2012 22:09:25 CEST
 version=1
 last_client=pcbnew
 [cvpcb]
@@ -92,7 +92,7 @@ DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=59
-LastNetListRead=
+LastNetListRead=8_relays.net
 [pcbnew/libraries]
 LibDir=components
 LibName1=sockets
