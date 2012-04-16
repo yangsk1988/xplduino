@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = dim. 15 avril 2012 21:38:41 CEST
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = lun. 16 avril 2012 13:51:36 CEST
 
 BeginCmp
 TimeStamp = /4F800E84;
@@ -113,22 +113,43 @@ IdModule  = LED-1206;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F89C8BD;
-Reference = K1;
+TimeStamp = /4F8BFB14;
+Reference = KU1A0;
 ValeurCmp = CONN_3;
 IdModule  = PIN_ARRAY_3X1;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F89C92A;
-Reference = K2;
+TimeStamp = /4F8BFB17;
+Reference = KU1A1;
 ValeurCmp = CONN_3;
 IdModule  = PIN_ARRAY_3X1;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F81B210;
-Reference = K_SUPPLY2;
+TimeStamp = /4F8BFB04;
+Reference = KU1A2;
+ValeurCmp = CONN_3;
+IdModule  = PIN_ARRAY_3X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F8BFD08;
+Reference = KU2A0;
+ValeurCmp = CONN_3;
+IdModule  = PIN_ARRAY_3X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F8BFD07;
+Reference = KU2A1;
+ValeurCmp = CONN_3;
+IdModule  = PIN_ARRAY_3X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F8BFD09;
+Reference = KU2A2;
 ValeurCmp = CONN_3;
 IdModule  = PIN_ARRAY_3X1;
 EndCmp
@@ -302,24 +323,10 @@ IdModule  = MOL_CONN_2_VH;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F893DA9;
-Reference = P9;
-ValeurCmp = CONN_3X2;
-IdModule  = pin_array_3x2;
-EndCmp
-
-BeginCmp
 TimeStamp = /4F8A8025;
 Reference = P10;
 ValeurCmp = CONN_5;
 IdModule  = HE10-6;
-EndCmp
-
-BeginCmp
-TimeStamp = /4F893E02;
-Reference = P11;
-ValeurCmp = CONN_3X2;
-IdModule  = pin_array_3x2;
 EndCmp
 
 BeginCmp
