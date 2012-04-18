@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = lun. 16 avril 2012 21:21:03 CEST
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = mer. 18 avril 2012 07:43:00 CEST
 
 BeginCmp
 TimeStamp = /4F800E84;
@@ -613,14 +613,14 @@ BeginCmp
 TimeStamp = /4F892C0E;
 Reference = U1;
 ValeurCmp = PCF8574;
-IdModule  = SO16N;
+IdModule  = SO16L;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F893E04;
 Reference = U2;
 ValeurCmp = PCF8574;
-IdModule  = SO16N;
+IdModule  = SO16L;
 EndCmp
 
 EndListe
