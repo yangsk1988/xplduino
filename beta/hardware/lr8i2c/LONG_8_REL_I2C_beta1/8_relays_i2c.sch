@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date mer. 18 avril 2012 13:06:07 CEST
+EESchema Schematic File Version 2  date mer. 18 avril 2012 20:39:17 CEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -604,31 +604,6 @@ Text Label 14200 3450 2    60   ~ 0
 spare
 Text Label 13250 3450 2    60   ~ 0
 spare
-Text Label 15350 4150 0    60   ~ 0
-OUT0
-Text Label 15350 3450 0    60   ~ 0
-OUT7
-Text Label 15350 3550 0    60   ~ 0
-OUT6
-Text Label 15350 3650 0    60   ~ 0
-OUT5
-Text Label 15350 3750 0    60   ~ 0
-OUT4
-Text Label 15350 3850 0    60   ~ 0
-OUT3
-Text Label 15350 3950 0    60   ~ 0
-OUT2
-Text Label 15350 4050 0    60   ~ 0
-OUT1
-$Comp
-L CONN_10 P113
-U 1 1 4F8DBB08
-P 15000 3700
-F 0 "P113" V 14950 3700 60  0000 C CNN
-F 1 "CONN_10" V 15050 3700 60  0000 C CNN
-	1    15000 3700
-	-1   0    0    1   
-$EndComp
 Text Label 8200 10350 2    60   ~ 0
 OUT7
 Text Label 8200 9050 2    60   ~ 0
