@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date mar. 17 avril 2012 22:50:39 CEST
+EESchema Schematic File Version 2  date mer. 18 avril 2012 13:06:07 CEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -30,13 +30,14 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:g5la-1-12vdc
+LIBS:8_relays_i2c-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "17 apr 2012"
+Date "18 apr 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -44,6 +45,22 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 5350 1750 0    60   ~ 0
+CMD7
+Text Label 5350 1650 0    60   ~ 0
+CMD6
+Text Label 5350 1550 0    60   ~ 0
+CMD5
+Text Label 5350 1450 0    60   ~ 0
+CMD4
+Text Label 5350 1350 0    60   ~ 0
+CMD3
+Text Label 5350 1250 0    60   ~ 0
+CMD2
+Text Label 5350 1150 0    60   ~ 0
+CMD1
+Text Label 5350 1050 0    60   ~ 0
+CMD0
 Wire Wire Line
 	10200 10000 9550 10000
 Wire Wire Line
