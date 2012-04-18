@@ -1,16 +1,6 @@
-update=mar. 17 avril 2012 20:05:49 CEST
+update=mar. 17 avril 2012 21:57:54 CEST
 version=1
-last_client=kicad
-[cvpcb]
-version=1
-NetITyp=0
-NetIExt=.net
-PkgIExt=.pkg
-NetDir=
-LibDir=
-NetType=0
-[cvpcb/libraries]
-EquName1=devcms
+last_client=pcbnew
 [eeschema]
 version=1
 LibDir=components
@@ -74,6 +64,13 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=g5la-1-12vdc
+[general]
+version=1
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [pcbnew]
 version=1
 PadDrlX=0
@@ -90,7 +87,7 @@ DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=59
-LastNetListRead=8_relays.net
+LastNetListRead=8_relays_i2c.net
 [pcbnew/libraries]
 LibDir=components
 LibName1=sockets
@@ -106,5 +103,4 @@ LibName10=dip_sockets
 LibName11=G5LA-1-12VDC
 LibName12=Molex_39531-0003
 LibName13=SOD123
-[general]
-version=1
+LibName14=HE10-2x3
