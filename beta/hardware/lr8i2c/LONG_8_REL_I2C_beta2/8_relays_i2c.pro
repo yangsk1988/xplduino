@@ -1,6 +1,6 @@
-update=mer. 18 avril 2012 22:57:22 CEST
+update=19/04/2012 08:19:40
 version=1
-last_client=kicad
+last_client=pcbnew
 [eeschema]
 version=1
 LibDir=components
@@ -69,6 +69,8 @@ version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
+[general]
+version=1
 [pcbnew]
 version=1
 PadDrlX=0
@@ -102,5 +104,4 @@ LibName11=G5LA-1-12VDC
 LibName12=Molex_39531-0003
 LibName13=SOD123
 LibName14=HE10-2x3
-[general]
-version=1
+LibName15=logo_xplduino
