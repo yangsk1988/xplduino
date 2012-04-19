@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = mer. 18 avril 2012 22:32:00 CEST
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 19/04/2012 10:47:57
 
 BeginCmp
 TimeStamp = /4F780532;
@@ -110,6 +110,20 @@ TimeStamp = /4F8DB9DA;
 Reference = D116;
 ValeurCmp = DIODE;
 IdModule  = SOD123;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F8FD0A7;
+Reference = D205;
+ValeurCmp = LED;
+IdModule  = LED-1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F8FD099;
+Reference = D212;
+ValeurCmp = LED;
+IdModule  = LED-1206;
 EndCmp
 
 BeginCmp
@@ -619,6 +633,20 @@ EndCmp
 BeginCmp
 TimeStamp = /4F8DB9D8;
 Reference = R135;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F8FD0A6;
+Reference = R205;
+ValeurCmp = R;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F8FD09A;
+Reference = R212;
 ValeurCmp = R;
 IdModule  = SM1206;
 EndCmp
