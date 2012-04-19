@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date mer. 18 avril 2012 22:31:56 CEST
+EESchema Schematic File Version 2  date 19/04/2012 10:46:38
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "18 apr 2012"
+Date "19 apr 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,6 +45,86 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L +5V #PWR?
+U 1 1 4F8FD0CA
+P 13650 1550
+F 0 "#PWR?" H 13650 1640 20  0001 C CNN
+F 1 "+5V" H 13650 1640 30  0000 C CNN
+	1    13650 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L +12V #PWR?
+U 1 1 4F8FD0C4
+P 13300 1550
+F 0 "#PWR?" H 13300 1500 20  0001 C CNN
+F 1 "+12V" H 13300 1650 30  0000 C CNN
+	1    13300 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 4F8FD0BD
+P 13300 2550
+F 0 "#PWR?" H 13300 2550 30  0001 C CNN
+F 1 "GND" H 13300 2480 30  0001 C CNN
+	1    13300 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 4F8FD0B0
+P 13650 2550
+F 0 "#PWR?" H 13650 2550 30  0001 C CNN
+F 1 "GND" H 13650 2480 30  0001 C CNN
+	1    13650 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13650 2100 13650 2050
+Wire Wire Line
+	13650 2500 13650 2550
+$Comp
+L LED D205
+U 1 1 4F8FD0A7
+P 13650 2300
+F 0 "D205" H 13650 2400 50  0000 C CNN
+F 1 "LED" H 13650 2200 50  0000 C CNN
+	1    13650 2300
+	0    1    1    0   
+$EndComp
+$Comp
+L R R205
+U 1 1 4F8FD0A6
+P 13650 1800
+F 0 "R205" V 13730 1800 50  0000 C CNN
+F 1 "R" V 13650 1800 50  0000 C CNN
+	1    13650 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R212
+U 1 1 4F8FD09A
+P 13300 1800
+F 0 "R212" V 13380 1800 50  0000 C CNN
+F 1 "R" V 13300 1800 50  0000 C CNN
+	1    13300 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D212
+U 1 1 4F8FD099
+P 13300 2300
+F 0 "D212" H 13300 2400 50  0000 C CNN
+F 1 "LED" H 13300 2200 50  0000 C CNN
+	1    13300 2300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	13300 2500 13300 2550
+Wire Wire Line
+	13300 2100 13300 2050
 $Comp
 L +5V #PWR01
 U 1 1 4F8F223A
