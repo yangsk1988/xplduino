@@ -1,4 +1,4 @@
-update=dim. 15 avril 2012 16:44:26 CEST
+update=19/04/2012 13:50:48
 version=1
 last_client=pcbnew
 [eeschema]
@@ -102,3 +102,4 @@ LibName9=led
 LibName10=dip_sockets
 LibName11=components/molex_2
 LibName12=components/HE10-2x3
+LibName13=components/logo_xplduino
