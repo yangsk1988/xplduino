@@ -1,4 +1,4 @@
-update=01/05/2012 18:15:17
+update=01/05/2012 19:28:11
 version=1
 last_client=eeschema
 [cvpcb]
@@ -142,3 +142,4 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=components/hr911105_rj45
+LibName32=components/Small_connectors
