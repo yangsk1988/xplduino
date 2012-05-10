@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date mer. 09 mai 2012 22:26:07 CEST
+PCBNEW-BOARD Version 1 date jeu. 10 mai 2012 21:11:41 CEST
 
 # Created by Pcbnew(2012-01-19 BZR 3256)-stable
 
@@ -7,21 +7,21 @@ encoding utf-8
 LayerCount 2
 Ly 1FFF8001
 EnabledLayers 1FFF8001
-Links 163
-NoConn 2
-Di 6781 7070 83996 31384
-Ndraw 74
+Links 161
+NoConn 0
+Di 6781 7070 83711 31384
+Ndraw 76
 Ntrack 566
 Nzone 0
 BoardThickness 630
-Nmodule 92
-Nnets 87
+Nmodule 91
+Nnets 86
 $EndGENERAL
 
 $SHEETDESCR
 Sheet A4 11700 8267
 Title ""
-Date "9 may 2012"
+Date "10 may 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -59,8 +59,8 @@ PadSize 335 335
 PadDrill 0
 Pad2MaskClearance 100
 GridOrigin 13780 64173
-AuxiliaryAxisOrg 13780 64173
-PcbPlotParams (pcbplotparams (layerselection 15761409) (usegerberextensions true) (excludeedgelayer true) (linewidth 60) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 0) (pscolor true) (psnegative false) (psa4output false) (plotreference true) (plotvalue false) (plotothertext true) (plotinvisibletext false) (padsonsilk true) (subtractmaskfromsilk false) (outputformat 1) (mirror false) (drillshape 1) (scaleselection 1) (outputdirectory gerber/))
+AuxiliaryAxisOrg 12980 25748
+PcbPlotParams (pcbplotparams (layerselection 15761409) (usegerberextensions true) (excludeedgelayer false) (linewidth 60) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 0) (pscolor true) (psnegative false) (psa4output false) (plotreference true) (plotvalue false) (plotothertext true) (plotinvisibletext false) (padsonsilk true) (subtractmaskfromsilk false) (outputformat 1) (mirror false) (drillshape 1) (scaleselection 1) (outputdirectory gerber/))
 $EndSETUP
 
 $EQUIPOT
@@ -407,10 +407,6 @@ $EQUIPOT
 Na 85 "N-000086"
 St ~
 $EndEQUIPOT
-$EQUIPOT
-Na 86 "N-000161"
-St ~
-$EndEQUIPOT
 $NCLASS
 Name "Default"
 Desc "Ceci est la Netclass par défaut"
@@ -478,7 +474,6 @@ AddNet "N-000083"
 AddNet "N-000084"
 AddNet "N-000085"
 AddNet "N-000086"
-AddNet "N-000161"
 $EndNCLASS
 $NCLASS
 Name "+12V"
@@ -4488,81 +4483,52 @@ DS -2000 800 -1700 400 100 20
 DS -2025 400 -1725 800 100 20
 T2 75 650 600 600 1800 120 M I 20 N "xPLDUINO"
 $EndMODULE  logo_xplduino
-$MODULE PINTST
-Po 33280 22973 0 15 3D649DF9 4FAA4E6B ~~
-Li PINTST
+$MODULE 1pin
+Po 53780 23228 0 15 00200000 4FAC0C1B ~~
+Li 1pin
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
-Sc 4FAA4E6B
-AR PINTST
+Sc 4FAC0C1B
+AR 1pin
 Op 0 0 0
-T0 0 -499 200 200 0 50 N V 21 N "PINTST"
-T1 0 500 200 200 0 50 N I 21 N "Val*"
-DC 0 0 -100 -300 50 21
+T0 0 -1200 400 400 0 100 N V 21 N "1PIN"
+T1 0 1100 400 400 0 100 N I 21 N "P***"
+DC 0 0 0 -900 150 21
 $PAD
-Sh "1" C 450 450 0 0 0
-Dr 250 0 0
+Sh "1" C 1600 1600 0 0 0
+Dr 1200 0 0
 At STD N 00E0FFFF
-Ne 86 "N-000161"
+Ne 0 ""
 Po 0 0
 $EndPAD
-$SHAPE3D
-Na "pin_array/pin_array_1x1.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  PINTST
-$MODULE PINTST
-Po 53880 22973 0 15 3D649DF9 4FAA4E93 ~~
-Li PINTST
+$EndMODULE  1pin
+$MODULE 1pin
+Po 33280 23228 0 15 00200000 4FAC0C2F ~~
+Li 1pin
 Cd module 1 pin (ou trou mecanique de percage)
 Kw DEV
-Sc 4FAA4E93
-AR PINTST
+Sc 4FAC0C2F
+AR 1pin
 Op 0 0 0
-T0 0 -499 200 200 0 50 N V 21 N "PINTST"
-T1 0 500 200 200 0 50 N I 21 N "Val*"
-DC 0 0 -100 -300 50 21
+T0 0 -1200 400 400 0 100 N V 21 N "1PIN"
+T1 0 1100 400 400 0 100 N I 21 N "P***"
+DC 0 0 0 -900 150 21
 $PAD
-Sh "1" C 450 450 0 0 0
-Dr 250 0 0
+Sh "1" C 1600 1600 0 0 0
+Dr 1200 0 0
 At STD N 00E0FFFF
-Ne 86 "N-000161"
+Ne 0 ""
 Po 0 0
 $EndPAD
-$SHAPE3D
-Na "pin_array/pin_array_1x1.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  PINTST
-$MODULE PINTST
-Po 39880 12373 0 15 3D649DF9 4FAA4F59 ~~
-Li PINTST
-Cd module 1 pin (ou trou mecanique de percage)
-Kw DEV
-Sc 4FAA4F59
-AR PINTST
-Op 0 0 0
-T0 0 -499 200 200 0 50 N V 21 N "PINTST"
-T1 0 500 200 200 0 50 N I 21 N "Val*"
-DC 0 0 -100 -300 50 21
-$PAD
-Sh "1" C 450 450 0 0 0
-Dr 250 0 0
-At STD N 00E0FFFF
-Ne 86 "N-000161"
-Po 0 0
-$EndPAD
-$SHAPE3D
-Na "pin_array/pin_array_1x1.wrl"
-Sc 1.000000 1.000000 1.000000
-Of 0.000000 0.000000 0.000000
-Ro 0.000000 0.000000 0.000000
-$EndSHAPE3D
-$EndMODULE  PINTST
+$EndMODULE  1pin
+$DRAWSEGMENT
+Po 0 12980 8873 12980 8773 150
+De 28 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 74005 8898 74005 8773 150
+De 28 0 900 0 0
+$EndDRAWSEGMENT
 $TEXTPCB
 Te "NO - COM - NC"
 Po 64280 25073 299 299 75 0
@@ -4897,7 +4863,7 @@ $endCOTATION
 $COTATION
 Ge 0 25 0
 Va 16929
-Te "43,000 mm"
+Te "43,25 mm"
 Po 81336 17308 600 800 120 2700 1
 Sb 0 80696 8844 80696 25773 120
 Sd 0 74004 25773 81976 25773 120
@@ -4908,7 +4874,7 @@ S3 0 80696 8844 80466 9287 120
 S4 0 80696 8844 80926 9287 120
 $endCOTATION
 $DRAWSEGMENT
-Po 0 74004 8844 12980 8844 150
+Po 0 74004 8769 12980 8769 150
 De 28 0 900 0 0
 $EndDRAWSEGMENT
 $DRAWSEGMENT
@@ -4918,7 +4884,7 @@ $EndDRAWSEGMENT
 $COTATION
 Ge 0 25 0
 Va 61023
-Te "154,998 mm"
+Te "155 mm"
 Po 43491 30743 600 800 120 0 1
 Sb 0 12980 30103 74003 30103 120
 Sd 0 74003 25773 74003 31383 120
@@ -5093,6 +5059,18 @@ Po 0 40680 13473 41780 13473 197 -1
 De 15 0 1 0 0
 Po 0 40180 13473 40680 13473 197 -1
 De 15 0 1 0 0
+Po 0 47080 9173 47380 9473 197 -1
+De 15 0 2 0 0
+Po 0 47380 9473 47380 11373 197 -1
+De 15 0 2 0 0
+Po 0 44380 10473 44130 10223 197 -1
+De 0 0 2 0 0
+Po 0 40880 10073 44030 10073 197 -1
+De 15 0 2 0 0
+Po 0 40180 17073 40480 16773 197 -1
+De 0 0 2 0 0
+Po 0 41530 20523 40180 19173 197 -1
+De 0 0 2 0 0
 Po 0 40480 16773 40880 16773 197 -1
 De 0 0 2 0 800000
 Po 0 44580 15773 42480 15773 197 -1
@@ -5118,18 +5096,6 @@ De 0 0 2 0 0
 Po 0 49680 11073 48380 12373 197 -1
 De 15 0 2 0 0
 Po 0 22130 10473 22130 11023 197 -1
-De 15 0 2 0 400000
-Po 0 40180 19173 40180 17073 197 -1
-De 0 0 2 0 0
-Po 0 41530 21373 41530 20523 197 -1
-De 0 0 2 0 400000
-Po 3 15680 10973 15680 10973 350 -1
-De 15 1 2 0 0
-Po 0 49930 10473 49930 10823 197 -1
-De 15 0 2 0 400000
-Po 0 15680 10973 15780 11073 197 -1
-De 0 0 2 0 0
-Po 0 35030 10473 35030 11023 197 -1
 De 15 0 2 0 400000
 Po 3 38880 11173 38880 11173 350 -1
 De 15 1 2 0 0
@@ -5169,18 +5135,6 @@ Po 3 56080 11073 56080 11073 350 -1
 De 15 1 2 0 0
 Po 0 40880 11473 40880 10073 197 -1
 De 15 0 2 0 0
-Po 0 41530 20523 40180 19173 197 -1
-De 0 0 2 0 0
-Po 0 40180 17073 40480 16773 197 -1
-De 0 0 2 0 0
-Po 0 40880 10073 44030 10073 197 -1
-De 15 0 2 0 0
-Po 0 44380 10473 44130 10223 197 -1
-De 0 0 2 0 0
-Po 0 47380 9473 47380 11373 197 -1
-De 15 0 2 0 0
-Po 0 47080 9173 47380 9473 197 -1
-De 15 0 2 0 0
 Po 0 45980 9173 47080 9173 197 -1
 De 15 0 2 0 0
 Po 0 45330 9823 45980 9173 197 -1
@@ -5209,6 +5163,18 @@ Po 3 62580 11073 62580 11073 350 -1
 De 15 1 2 0 0
 Po 0 62930 10723 62580 11073 197 -1
 De 15 0 2 0 0
+Po 0 35030 10473 35030 11023 197 -1
+De 15 0 2 0 400000
+Po 0 15680 10973 15780 11073 197 -1
+De 0 0 2 0 0
+Po 0 49930 10473 49930 10823 197 -1
+De 15 0 2 0 400000
+Po 3 15680 10973 15680 10973 350 -1
+De 15 1 2 0 0
+Po 0 41530 21373 41530 20523 197 -1
+De 0 0 2 0 400000
+Po 0 40180 19173 40180 17073 197 -1
+De 0 0 2 0 0
 Po 0 56430 10473 56430 10723 197 -1
 De 15 0 2 0 400000
 Po 0 42480 15773 41380 15773 197 -1
