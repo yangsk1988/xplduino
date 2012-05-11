@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date 10/05/2012 08:58:15
+PCBNEW-BOARD Version 1 date 10/05/2012 08:59:59
 
 # Created by Pcbnew(2012-01-19 BZR 3256)-stable
 
@@ -10,7 +10,7 @@ EnabledLayers 1FFF8001
 Links 203
 NoConn 1
 Di 23541 41669 90851 66438
-Ndraw 43
+Ndraw 45
 Ntrack 773
 Nzone 0
 BoardThickness 630
@@ -5858,6 +5858,16 @@ Ne 0 ""
 Po 0 0
 $EndPAD
 $EndMODULE  1pin
+$TEXTPCB
+Te "address"
+Po 40000 48800 500 500 120 0
+De 21 1 0 Normal C
+$EndTEXTPCB
+$TEXTPCB
+Te "address"
+Po 68300 48700 500 500 71 0
+De 21 1 0 Normal C
+$EndTEXTPCB
 $TEXTPCB
 Te "IN15        IN14"
 Po 66200 61300 300 300 75 0
