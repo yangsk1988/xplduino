@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date mer. 02 mai 2012 10:39:58 CEST
+EESchema Schematic File Version 2  date mer. 02 mai 2012 10:46:34 CEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -46,19 +46,19 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L DGND #PWR?
+L DGND #PWR01
 U 1 1 4FA0F2DB
 P 5900 4750
-F 0 "#PWR?" H 5900 4750 40  0001 C CNN
+F 0 "#PWR01" H 5900 4750 40  0001 C CNN
 F 1 "DGND" H 5900 4680 40  0000 C CNN
 	1    5900 4750
 	1    0    0    -1  
 $EndComp
 $Comp
-L +5V #PWR01
+L +5V #PWR02
 U 1 1 4FA0F021
 P 5900 3850
-F 0 "#PWR01" H 5900 3940 20  0001 C CNN
+F 0 "#PWR02" H 5900 3940 20  0001 C CNN
 F 1 "+5V" H 5900 3940 30  0000 C CNN
 	1    5900 3850
 	1    0    0    -1  
@@ -1228,10 +1228,6 @@ F 1 "VCC" H 6250 900 30  0000 C CNN
 	1    6250 800 
 	1    0    0    -1  
 $EndComp
-Text Notes 5000 6550 0    60   ~ 0
-DERNIERE MODIF:\n- remplacement de Vcc par +5VCC\n- PCF8574 pour gestion via I2C\n- suppression PCF85102 Eeprom 256b pour mémoriser les paramètres (futur)\n- séparation des masses
-Text Notes 5000 5600 0    60   ~ 0
-TODO:\n- voir pour améliorer le positionnnement de la led témoin. Sur la version précédente, la led était en série avec la sortie de l'opto.\n- la valeur de la tension d'entrée d'opto dépend de la valeur de la résistance en entrée\n- rajouter une led témoin présence 5V ?\n- est-ce que le connecteur I2C ne pourrait pas être un connecteur HE-6 ?
 $Comp
 L +5V #PWR051
 U 1 1 4F81B304
