@@ -1,4 +1,4 @@
-update=01/05/2012 19:28:11
+update=17/06/2012 22:45:34
 version=1
 last_client=eeschema
 [cvpcb]
@@ -81,7 +81,7 @@ LibName10=dip_sockets
 version=1
 [eeschema]
 version=1
-LibDir=
+LibDir=components
 NetFmt=1
 HPGLSpd=20
 HPGLDm=15
@@ -143,3 +143,5 @@ LibName29=contrib
 LibName30=valves
 LibName31=components/hr911105_rj45
 LibName32=components/Small_connectors
+LibName33=74hc08
+LibName34=lm1117imp-3
