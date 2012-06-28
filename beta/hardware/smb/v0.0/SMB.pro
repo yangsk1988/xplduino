@@ -1,4 +1,4 @@
-update=17/06/2012 22:45:34
+update=28/06/2012 23:00:13
 version=1
 last_client=eeschema
 [cvpcb]
@@ -145,3 +145,4 @@ LibName31=components/hr911105_rj45
 LibName32=components/Small_connectors
 LibName33=74hc08
 LibName34=lm1117imp-3
+LibName35=mp2562ds
