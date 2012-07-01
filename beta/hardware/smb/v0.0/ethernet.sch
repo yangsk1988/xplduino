@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 28/06/2012 23:43:20
+EESchema Schematic File Version 2  date 01/07/2012 20:02:11
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -34,14 +34,16 @@ LIBS:Small_connectors
 LIBS:74hc08
 LIBS:lm1117imp-3
 LIBS:mp2562ds
+LIBS:usd_conn
+LIBS:74lvc1g126gw
 LIBS:SMB-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
-Sheet 3 3
+Sheet 4 4
 Title ""
-Date "28 jun 2012"
+Date "1 jul 2012"
 Rev ""
 Comp ""
 Comment1 ""

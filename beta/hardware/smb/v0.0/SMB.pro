@@ -1,4 +1,4 @@
-update=28/06/2012 23:00:13
+update=01/07/2012 18:09:12
 version=1
 last_client=eeschema
 [cvpcb]
@@ -146,3 +146,5 @@ LibName32=components/Small_connectors
 LibName33=74hc08
 LibName34=lm1117imp-3
 LibName35=mp2562ds
+LibName36=usd_conn
+LibName37=74lvc1g126gw
