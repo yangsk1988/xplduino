@@ -1,16 +1,6 @@
-update=14/07/2012 17:50:12
+update=14/07/2012 20:44:24
 version=1
-last_client=pcbnew
-[cvpcb]
-version=1
-NetITyp=0
-NetIExt=.net
-PkgIExt=.pkg
-NetDir=
-LibDir=
-NetType=0
-[cvpcb/libraries]
-EquName1=devcms
+last_client=cvpcb
 [general]
 version=1
 [eeschema]
@@ -82,11 +72,12 @@ LibName34=lm1117imp-3
 LibName35=mp2562ds
 LibName36=usd_conn
 LibName37=74lvc1g126gw
+LibName38=dual_self
 [pcbnew]
 version=1
 PadDrlX=0
-PadDimH=472
-PadDimV=472
+PadDimH=787
+PadDimV=906
 BoardThickness=630
 TxtPcbV=800
 TxtPcbH=600
@@ -100,7 +91,6 @@ TxtLar=120
 MSegLar=30
 LastNetListRead=SMB.net
 [pcbnew/libraries]
-LibDir=components
 LibName1=sockets
 LibName2=connect
 LibName3=discret
@@ -112,3 +102,13 @@ LibName8=valves
 LibName9=led
 LibName10=dip_sockets
 LibName11=DM3CS-SF
+LibName12=HE10-2x3
+LibName13=molex_2
+LibName14=B290-13-F
+LibName15=SRF1260-150M
+LibDir=components
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms

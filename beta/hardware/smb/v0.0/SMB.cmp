@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 14/07/2012 17:50:55
+Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 14/07/2012 20:44:35
 
 BeginCmp
 TimeStamp = /4FA01278;
@@ -248,22 +248,22 @@ EndCmp
 BeginCmp
 TimeStamp = /4FDE1C88/4FECC7AC;
 Reference = D301;
-ValeurCmp = DIODESCH;
-IdModule  = ;
+ValeurCmp = B280-13-F;
+IdModule  = B290-13-F;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FC7D32E;
 Reference = IC101;
 ValeurCmp = ATMEGA1284-A;
-IdModule  = TQPF44;
+IdModule  = TQFP44;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FA06CC5;
 Reference = J101;
 ValeurCmp = I2C;
-IdModule  = ;
+IdModule  = PIN_ARRAY_4x1;
 EndCmp
 
 BeginCmp
@@ -277,14 +277,14 @@ BeginCmp
 TimeStamp = /4FDE451A;
 Reference = J103;
 ValeurCmp = ICSP;
-IdModule  = ;
+IdModule  = pin_array_3x2;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FA02579;
 Reference = J104;
 ValeurCmp = SERIAL_REV;
-IdModule  = ;
+IdModule  = PIN_ARRAY-6X1;
 EndCmp
 
 BeginCmp
@@ -309,10 +309,17 @@ IdModule  = ;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FDE1C88/4FECC7CE;
+TimeStamp = /4FDE1C88/5001BD2F;
 Reference = L301;
-ValeurCmp = 15uH;
-IdModule  = ;
+ValeurCmp = SRF1260-150M;
+IdModule  = SRF1260-150M;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FDE1C88/5001A202;
+Reference = P301;
+ValeurCmp = CONN_2;
+IdModule  = MOL_CONN_2_VH;
 EndCmp
 
 BeginCmp
