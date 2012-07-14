@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  01/07/2012 20:14:49
+# EESchema Netlist Version 1.1 created  14/07/2012 17:50:55
 (
  ( /4FA01278 SM0603 C101 0.1uF
   ( 1 +5V )
@@ -56,7 +56,7 @@
   ( 1 +3.3V )
   ( 2 GND )
  )
- ( /4F9D6DA9/4F9FEDA2 $noname$ C208 10uF
+ ( /4F9D6DA9/4F9FEDA2 SM0805 C208 10uF
   ( 1 N-000055 )
   ( 2 GND )
  )
@@ -76,7 +76,7 @@
   ( 1 +5V )
   ( 2 GND )
  )
- ( /4FDE1C88/4FDE42D6 $noname$ C213 10uF
+ ( /4FDE1C88/4FDE42D6 SM0805 C213 10uF
   ( 1 +3.3V )
   ( 2 GND )
  )
@@ -88,45 +88,61 @@
   ( 1 GND )
   ( 2 +3.3V )
  )
- ( /4FDE1C88/4FECCB10 $noname$ C301 C
+ ( /4FDE1C88/4FF09433 SM0805 C301 1uF
   ( 1 +12V )
   ( 2 GND )
  )
  ( /4FDE1C88/4FECC90A SM0603 C302 150pF
-  ( 1 N-000063 )
-  ( 2 N-000066 )
+  ( 1 N-000062 )
+  ( 2 N-000067 )
  )
- ( /4FDE1C88/4FECC757 SM0603 C303 100nF
-  ( 1 N-000065 )
-  ( 2 N-000068 )
+ ( /4FDE1C88/4FF0943E SM0805 C303 1uF
+  ( 1 +12V )
+  ( 2 GND )
  )
- ( /4FDE1C88/4FECC821 $noname$ C304 22uF
-  ( 1 +5V )
+ ( /4FDE1C88/4FF09443 SM0805 C304 1uF
+  ( 1 +12V )
   ( 2 GND )
  )
  ( /4FDE1C88/4FF092D9 SM0805 C305 4.7uF
   ( 1 +5V )
   ( 2 GND )
  )
- ( /4FDE1C88/4FF092E1 SM0805 C306 CSMALL
+ ( /4FDE1C88/4FF092E1 SM0805 C306 4.7uF
   ( 1 +5V )
   ( 2 GND )
  )
- ( /4FDE1C88/4FF092E6 SM0805 C307 CSMALL
+ ( /4FDE1C88/4FF092E6 SM0805 C307 4.7uF
   ( 1 +5V )
   ( 2 GND )
  )
- ( /4FDE1C88/4FF092EB SM0805 C308 CSMALL
+ ( /4FDE1C88/4FF092EB SM0805 C308 4.7uF
   ( 1 +5V )
   ( 2 GND )
  )
- ( /4FA019FA $noname$ D101 LED
+ ( /4FDE1C88/4FF096F8 SM0603 C309 100nF
+  ( 1 N-000066 )
+  ( 2 N-000065 )
+ )
+ ( /4FDE1C88/4FF09446 SM0805 C310 1uF
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4FDE1C88/4FF0944C SM0805 C311 1uF
+  ( 1 +12V )
+  ( 2 GND )
+ )
+ ( /4FDE1C88/4FF094D6 SM0805 C312 4.7uF
+  ( 1 +5V )
+  ( 2 GND )
+ )
+ ( /4FA019FA LED-0603 D101 LED
   ( 1 N-000027 )
   ( 2 N-000026 )
  )
  ( /4FDE1C88/4FECC7AC $noname$ D301 DIODESCH
   ( 1 GND )
-  ( 2 N-000068 )
+  ( 2 N-000065 )
  )
  ( /4FC7D32E TQPF44 IC101 ATMEGA1284-A
   ( 1 SPI_MOSI )
@@ -214,7 +230,7 @@
   ( 11 GND )
   ( 12 N-000050 )
  )
- ( /4FF04C39/4FF052FB $noname$ J202 USD_CONN
+ ( /4FF04C39/4FF052FB DM3CS-SF J202 USD_CONN
   ( 1 ? )
   ( 2 CS_33 )
   ( 3 MOSI_33 )
@@ -229,7 +245,7 @@
   ( 2 N-000045 )
  )
  ( /4FDE1C88/4FECC7CE $noname$ L301 15uH
-  ( 1 N-000068 )
+  ( 1 N-000065 )
   ( 2 +5V )
  )
  ( /4FA065D3 SM0603 R101 10k
@@ -276,28 +292,28 @@
   ( 1 N-000051 )
   ( 2 N-000056 )
  )
- ( /4FDE1C88/4FECC9AD SM0603 R301 R
-  ( 1 N-000067 )
+ ( /4FDE1C88/4FECC9AD SM0603 R301 17.4k
+  ( 1 N-000068 )
   ( 2 GND )
  )
- ( /4FDE1C88/4FECC93E SM0603 R302 R
+ ( /4FDE1C88/4FECC93E SM0603 R302 100k
   ( 1 +12V )
-  ( 2 N-000067 )
+  ( 2 N-000068 )
  )
  ( /4FDE1C88/4FECC712 SM0603 R303 200k
   ( 1 N-000064 )
   ( 2 GND )
  )
  ( /4FDE1C88/4FECC916 SM0603 R304 158k
-  ( 1 N-000066 )
+  ( 1 N-000067 )
   ( 2 GND )
  )
- ( /4FDE1C88/4FECC8C8 SM0603 R305 R
-  ( 1 N-000061 )
+ ( /4FDE1C88/4FECC8C8 SM0603 R305 40.2k
+  ( 1 N-000063 )
   ( 2 GND )
  )
- ( /4FDE1C88/4FECC898 SM0603 R306 R
-  ( 1 N-000061 )
+ ( /4FDE1C88/4FECC898 SM0603 R306 210k
+  ( 1 N-000063 )
   ( 2 +5V )
  )
  ( /4FA01B08 $noname$ SW101 reset_sw
@@ -377,15 +393,15 @@
   ( 7 GND )
   ( 14 +5V )
  )
- ( /4FDE1C88/4FECC5EE $noname$ U302 MP2562DS
-  ( 1 N-000068 )
-  ( 2 N-000067 )
-  ( 3 N-000063 )
-  ( 4 N-000061 )
+ ( /4FDE1C88/4FECC5EE SO8E U302 MP2562DS
+  ( 1 N-000065 )
+  ( 2 N-000068 )
+  ( 3 N-000062 )
+  ( 4 N-000063 )
   ( 5 GND )
   ( 6 N-000064 )
   ( 7 +12V )
-  ( 8 N-000065 )
+  ( 8 N-000066 )
  )
  ( /4FA013C3 $noname$ X101 16MHz
   ( 1 N-000039 )
@@ -542,6 +558,26 @@ $component C307
  C1-1
 $endlist
 $component C308
+ SM*
+ C?
+ C1-1
+$endlist
+$component C309
+ SM*
+ C?
+ C1-1
+$endlist
+$component C310
+ SM*
+ C?
+ C1-1
+$endlist
+$component C311
+ SM*
+ C?
+ C1-1
+$endlist
+$component C312
  SM*
  C?
  C1-1
