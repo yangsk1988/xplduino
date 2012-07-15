@@ -1,6 +1,6 @@
-update=14/07/2012 20:44:24
+update=15/07/2012 15:45:10
 version=1
-last_client=cvpcb
+last_client=pcbnew
 [general]
 version=1
 [eeschema]
@@ -73,6 +73,11 @@ LibName35=mp2562ds
 LibName36=usd_conn
 LibName37=74lvc1g126gw
 LibName38=dual_self
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [pcbnew]
 version=1
 PadDrlX=0
@@ -91,6 +96,7 @@ TxtLar=120
 MSegLar=30
 LastNetListRead=SMB.net
 [pcbnew/libraries]
+LibDir=components
 LibName1=sockets
 LibName2=connect
 LibName3=discret
@@ -106,9 +112,4 @@ LibName12=HE10-2x3
 LibName13=molex_2
 LibName14=B290-13-F
 LibName15=SRF1260-150M
-LibDir=components
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
+LibName16=HR911105_RJ45

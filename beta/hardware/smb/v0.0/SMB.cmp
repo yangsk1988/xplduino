@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 14/07/2012 20:44:35
+Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 15/07/2012 19:25:29
 
 BeginCmp
 TimeStamp = /4FA01278;
@@ -270,7 +270,7 @@ BeginCmp
 TimeStamp = /4FA01D97;
 Reference = J102;
 ValeurCmp = RTS_RESET;
-IdModule  = ;
+IdModule  = PIN_ARRAY_2X1;
 EndCmp
 
 BeginCmp
@@ -288,13 +288,6 @@ IdModule  = PIN_ARRAY-6X1;
 EndCmp
 
 BeginCmp
-TimeStamp = /4F9D6DA9/4FA00C1F;
-Reference = J201;
-ValeurCmp = HR911105_RJ45;
-IdModule  = ;
-EndCmp
-
-BeginCmp
 TimeStamp = /4FF04C39/4FF052FB;
 Reference = J202;
 ValeurCmp = USD_CONN;
@@ -302,10 +295,17 @@ IdModule  = DM3CS-SF;
 EndCmp
 
 BeginCmp
+TimeStamp = /4F9D6DA9/5002FC53;
+Reference = J401;
+ValeurCmp = HR911105_RJ45;
+IdModule  = HR911105_RJ45;
+EndCmp
+
+BeginCmp
 TimeStamp = /4F9D6DA9/4FA00FB5;
 Reference = L201;
 ValeurCmp = 4.7uH;
-IdModule  = ;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
@@ -442,6 +442,20 @@ IdModule  = SM0603;
 EndCmp
 
 BeginCmp
+TimeStamp = /4F9D6DA9/5002C813;
+Reference = R401;
+ValeurCmp = 270R;
+IdModule  = SM0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /4F9D6DA9/5002C81B;
+Reference = R402;
+ValeurCmp = 270R;
+IdModule  = SM0603;
+EndCmp
+
+BeginCmp
 TimeStamp = /4FA01B08;
 Reference = SW101;
 ValeurCmp = reset_sw;
@@ -452,14 +466,14 @@ BeginCmp
 TimeStamp = /4F9D6DA9/4F9D6DD5;
 Reference = U201;
 ValeurCmp = ENC28J60;
-IdModule  = ;
+IdModule  = SO28;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FDE1C88/4FDE429F;
 Reference = U202;
 ValeurCmp = LM1117IMP-3.3;
-IdModule  = ;
+IdModule  = SOT223;
 EndCmp
 
 BeginCmp
@@ -494,7 +508,7 @@ BeginCmp
 TimeStamp = /4F9D6DA9/4FDE1879;
 Reference = U301;
 ValeurCmp = 74HC08;
-IdModule  = ;
+IdModule  = SO14E;
 EndCmp
 
 BeginCmp
@@ -508,14 +522,14 @@ BeginCmp
 TimeStamp = /4FA013C3;
 Reference = X101;
 ValeurCmp = 16MHz;
-IdModule  = ;
+IdModule  = Q_49U3HMS;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F9D6DA9/4F9D7201;
 Reference = X201;
 ValeurCmp = 25MHz;
-IdModule  = ;
+IdModule  = Q_49U3HMS;
 EndCmp
 
 EndListe
