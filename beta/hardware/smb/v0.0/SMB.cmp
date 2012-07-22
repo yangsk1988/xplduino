@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 15/07/2012 19:25:29
+Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 22/07/2012 23:25:13
 
 BeginCmp
 TimeStamp = /4FA01278;
@@ -260,13 +260,6 @@ IdModule  = TQFP44;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FA06CC5;
-Reference = J101;
-ValeurCmp = I2C;
-IdModule  = PIN_ARRAY_4x1;
-EndCmp
-
-BeginCmp
 TimeStamp = /4FA01D97;
 Reference = J102;
 ValeurCmp = RTS_RESET;
@@ -316,6 +309,13 @@ IdModule  = SRF1260-150M;
 EndCmp
 
 BeginCmp
+TimeStamp = /500C6B20;
+Reference = P101;
+ValeurCmp = I2C_CONN;
+IdModule  = HE10-6;
+EndCmp
+
+BeginCmp
 TimeStamp = /4FDE1C88/5001A202;
 Reference = P301;
 ValeurCmp = CONN_2;
@@ -351,14 +351,14 @@ IdModule  = SM0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FA06D51;
+TimeStamp = /500C6C4F;
 Reference = R105;
 ValeurCmp = R;
 IdModule  = SM0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FA06D7A;
+TimeStamp = /500C6C3A;
 Reference = R106;
 ValeurCmp = R;
 IdModule  = SM0603;
