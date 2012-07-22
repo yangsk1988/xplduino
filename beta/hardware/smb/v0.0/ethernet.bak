@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 15/07/2012 19:23:00
+EESchema Schematic File Version 2  date 15/07/2012 20:25:53
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -279,10 +279,10 @@ Wire Wire Line
 Wire Wire Line
 	9100 4550 9100 3750
 $Comp
-L HR911105_RJ45 J?
+L HR911105_RJ45 J401
 U 1 1 5002FC53
 P 10050 3200
-F 0 "J?" H 10200 3850 60  0000 C CNN
+F 0 "J401" H 10200 3850 60  0000 C CNN
 F 1 "HR911105_RJ45" V 10600 3350 60  0000 C CNN
 	1    10050 3200
 	1    0    0    -1  
