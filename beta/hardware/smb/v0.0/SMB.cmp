@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 29/07/2012 20:43:06
+Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 05/08/2012 17:29:17
 
 BeginCmp
 TimeStamp = /4FA01278;
@@ -318,8 +318,22 @@ EndCmp
 BeginCmp
 TimeStamp = /50158246;
 Reference = P102;
-ValeurCmp = I2C_CONN_2;
+ValeurCmp = CONN_6;
 IdModule  = HE10-6;
+EndCmp
+
+BeginCmp
+TimeStamp = /501E56A1;
+Reference = P103;
+ValeurCmp = CONN_5X2;
+IdModule  = PIN_ARRAY_5x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /501E893F;
+Reference = P104;
+ValeurCmp = CONN_5X2;
+IdModule  = PIN_ARRAY_5x2;
 EndCmp
 
 BeginCmp
