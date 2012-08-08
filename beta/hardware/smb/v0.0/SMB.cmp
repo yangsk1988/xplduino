@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 05/08/2012 17:29:17
+Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 08/08/2012 22:57:18
 
 BeginCmp
 TimeStamp = /4FA01278;
@@ -477,10 +477,10 @@ IdModule  = SM0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FA01B08;
+TimeStamp = /5022D1BC;
 Reference = SW101;
-ValeurCmp = reset_sw;
-IdModule  = ;
+ValeurCmp = SKQGAKE010;
+IdModule  = SKQGAKE010;
 EndCmp
 
 BeginCmp
