@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 08/08/2012 22:57:18
+Cmp-Mod V01 Created by CvPcb (2011-12-21 BZR 3253)-stable date = 09/08/2012 22:07:44
 
 BeginCmp
 TimeStamp = /4FA01278;
@@ -382,6 +382,13 @@ BeginCmp
 TimeStamp = /500C6C3A;
 Reference = R106;
 ValeurCmp = R;
+IdModule  = SM0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /5024182F;
+Reference = R107;
+ValeurCmp = 0;
 IdModule  = SM0603;
 EndCmp
 
